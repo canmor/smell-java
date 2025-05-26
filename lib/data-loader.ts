@@ -42,6 +42,7 @@ export function getBadSmells(): BadSmell[] {
 
       // 读取对应的C++示例文件
       const examplePath = path.join(examplesDir, data.exampleFile)
+      console.log(`Loading example from: ${examplePath}`)
       let example = ""
       if (fs.existsSync(examplePath)) {
         example = fs.readFileSync(examplePath, "utf8")

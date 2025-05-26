@@ -3,6 +3,7 @@
 import { Copy, Check } from "lucide-react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
+import { Highlight, themes } from "prism-react-renderer"
 
 interface CodeBlockProps {
   code: string
@@ -11,112 +12,22 @@ interface CodeBlockProps {
   className?: string
 }
 
-// C++ 语法高亮规则
-const highlightCppCode = (code: string): string => {
-  // C++ 关键字
-  const keywords = [
-    "class",
-    "struct",
-    "enum",
-    "namespace",
-    "template",
-    "typename",
-    "public",
-    "private",
-    "protected",
-    "virtual",
-    "override",
-    "final",
-    "static",
-    "const",
-    "constexpr",
-    "mutable",
-    "volatile",
-    "if",
-    "else",
-    "for",
-    "while",
-    "do",
-    "switch",
-    "case",
-    "default",
-    "break",
-    "continue",
-    "return",
-    "goto",
-    "try",
-    "catch",
-    "throw",
-    "new",
-    "delete",
-    "sizeof",
-    "typeid",
-    "this",
-    "nullptr",
-    "true",
-    "false",
-    "auto",
-    "decltype",
-    "using",
-    "typedef",
-    "int",
-    "char",
-    "bool",
-    "float",
-    "double",
-    "void",
-    "long",
-    "short",
-    "unsigned",
-    "signed",
-    "std",
-    "string",
-    "vector",
-    "map",
-    "set",
-    "cout",
-    "cin",
-    "endl",
-    "include",
-    "define",
-    "ifdef",
-    "ifndef",
-    "endif",
-  ]
-
-  let highlighted = code
-
-  // 高亮字符串 (双引号)
-  highlighted = highlighted.replace(/"([^"\\]|\\.)*"/g, '<span class="text-green-400">$&</span>')
-
-  // 高亮字符串 (单引号)
-  highlighted = highlighted.replace(/'([^'\\]|\\.)*'/g, '<span class="text-green-400">$&</span>')
-
-  // 高亮单行注释
-  highlighted = highlighted.replace(/\/\/.*$/gm, '<span class="text-gray-500 italic">$&</span>')
-
-  // 高亮多行注释
-  highlighted = highlighted.replace(/\/\*[\s\S]*?\*\//g, '<span class="text-gray-500 italic">$&</span>')
-
-  // 高亮预处理指令
-  highlighted = highlighted.replace(/^#.*$/gm, '<span class="text-purple-400">$&</span>')
-
-  // 高亮数字
-  highlighted = highlighted.replace(/\b\d+\.?\d*\b/g, '<span class="text-orange-400">$&</span>')
-
-  // 高亮关键字
-  keywords.forEach((keyword) => {
-    const regex = new RegExp(`\\b${keyword}\\b`, "g")
-    highlighted = highlighted.replace(regex, `<span class="text-blue-400 font-semibold">${keyword}</span>`)
-  })
-
-  // 高亮操作符
-  highlighted = highlighted.replace(/[+\-*/%=<>!&|^~?:]+/g, '<span class="text-yellow-400">$&</span>')
-
-  // 高亮括号和分隔符
-  highlighted = highlighted.replace(/[{}[\]();,]/g, '<span class="text-gray-300">$&</span>')
-
-  return highlighted
+// 将语言标识符转换为 prism-react-renderer 支持的格式
+const getLanguage = (language: string): string => {
+  // 映射常见的语言标识符
+  const languageMap: Record<string, string> = {
+    "cpp": "cpp",
+    "c++": "cpp",
+    "js": "javascript",
+    "ts": "typescript",
+    "jsx": "jsx",
+    "tsx": "tsx",
+    "md": "markdown",
+    "py": "python",
+    // 可根据需要添加更多映射
+  }
+  
+  return languageMap[language.toLowerCase()] || language
 }
 
 export function CodeBlock({ code, language = "cpp", showLineNumbers = true, className = "" }: CodeBlockProps) {
@@ -133,8 +44,6 @@ export function CodeBlock({ code, language = "cpp", showLineNumbers = true, clas
   }
 
   const lines = code.split("\n")
-  const highlightedCode = language === "cpp" ? highlightCppCode(code) : code
-  const highlightedLines = highlightedCode.split("\n")
 
   return (
     <div className={`relative group ${className}`}>
@@ -158,29 +67,45 @@ export function CodeBlock({ code, language = "cpp", showLineNumbers = true, clas
         )}
       </Button>
 
-      <div className="bg-gray-900 rounded-lg overflow-hidden">
-        <div className="flex">
-          {/* Line numbers */}
-          {showLineNumbers && (
-            <div className="bg-gray-800 px-4 py-4 text-gray-500 text-sm font-mono select-none border-r border-gray-700">
-              {lines.map((_, index) => (
-                <div key={index} className="leading-6">
-                  {index + 1}
+      <Highlight
+        code={code}
+        language={getLanguage(language) as any}
+        theme={themes.nightOwl}
+      >
+        {({ className: highlightClassName, style, tokens, getLineProps, getTokenProps }) => (
+          <div className="bg-gray-900 rounded-lg overflow-hidden">
+            <div className="flex">
+              {/* Line numbers */}
+              {showLineNumbers && (
+                <div className="bg-gray-800 px-4 py-4 text-gray-500 text-sm font-mono select-none border-r border-gray-700">
+                  {tokens.map((_, index) => (
+                    <div key={index} className="leading-6">
+                      {index + 1}
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          )}
+              )}
 
-          {/* Code content */}
-          <div className="flex-1 p-4 overflow-x-auto">
-            <pre className="text-sm font-mono text-gray-100 leading-6">
-              {highlightedLines.map((line, index) => (
-                <div key={index} dangerouslySetInnerHTML={{ __html: line || " " }} />
-              ))}
-            </pre>
+              {/* Code content */}
+              <div className="flex-1 p-4 overflow-x-auto">
+                <pre className={`text-sm font-mono leading-6`} style={style}>
+                  {tokens.map((line, i) => {
+                    const lineProps = getLineProps({ line });
+                    return (
+                      <div key={i} {...lineProps}>
+                        {line.map((token, key) => {
+                          const tokenProps = getTokenProps({ token });
+                          return <span key={key} {...tokenProps} />;
+                        })}
+                      </div>
+                    );
+                  })}
+                </pre>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        )}
+      </Highlight>
     </div>
   )
 }

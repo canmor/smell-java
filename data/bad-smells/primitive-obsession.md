@@ -28,37 +28,3 @@ exampleFile: "primitive-obsession.cpp"
 ## 说明
 
 应该创建Email、Phone、Address等值对象来封装这些概念，而不是使用原始的string类型。这样可以将验证逻辑封装在对象内部，提高代码的安全性和可读性。
-\`\`\`
-
-```cpp file="data/examples/primitive-obsession.cpp"
-class User {
-private:
-    std::string firstName;
-    std::string lastName;
-    std::string email;
-    std::string phone;
-    std::string address;
-    std::string city;
-    std::string zipCode;
-    std::string country;
-    
-public:
-    bool isValidEmail(const std::string& email) {
-        return email.find('@') != std::string::npos;
-    }
-    
-    bool isValidPhone(const std::string& phone) {
-        return phone.length() >= 10;
-    }
-    
-    std::string getFullAddress() {
-        return address + ", " + city + " " + zipCode + ", " + country;
-    }
-    
-    // 验证逻辑分散，缺乏类型安全
-    void updateEmail(const std::string& newEmail) {
-        if (isValidEmail(newEmail)) {
-            email = newEmail;
-        }
-    }
-};

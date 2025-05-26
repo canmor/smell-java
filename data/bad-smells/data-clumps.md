@@ -27,29 +27,3 @@ exampleFile: "data-clumps.cpp"
 ## 说明
 
 startX, startY 和 endX, endY 经常一起出现，应该创建Point类来封装坐标概念，提高代码的可读性和可维护性。
-\`\`\`
-
-```cpp file="data/examples/data-clumps.cpp"
-class Rectangle {
-private:
-    int startX, startY;
-    int endX, endY;
-public:
-    void draw(int startX, int startY, int endX, int endY);
-};
-
-class Circle {
-private:
-    int centerX, centerY;
-    int radius;
-public:
-    void draw(int centerX, int centerY, int radius);
-};
-
-class Line {
-private:
-    int startX, startY;
-    int endX, endY;
-public:
-    void draw(int startX, int startY, int endX, int endY);
-};
