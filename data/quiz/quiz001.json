@@ -1,0 +1,7 @@
+{
+  "id": "quiz001",
+  "codePath": "quiz001.cpp",
+  "correct": "过多的 switch",
+  "choices": ["冗长函数", "过多的 switch", "数据团", "原始类型偏执"],
+  "explanation": "这里使用了一系列if-else语句来处理不同类型，应该使用多态来替代。"
+}

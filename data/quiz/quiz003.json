@@ -1,0 +1,7 @@
+{
+  "id": "quiz003",
+  "codePath": "quiz003.cpp",
+  "correct": "冗长函数",
+  "choices": ["冗长函数", "特性嫉妒", "过多的 switch", "重复代码"],
+  "explanation": "这个函数过长，承担了太多职责，应该拆分为多个小函数。"
+}

@@ -1,0 +1,55 @@
+---
+slug: "data-clumps"
+nameCn: "数据团"
+nameEn: "Data Clumps"
+category: "Bloaters"
+description: "相同的数据项总是一起出现在多个地方。"
+exampleFile: "data-clumps.cpp"
+---
+
+# 简介
+
+当你看到相同的数据项（通常是2-3个字段）在多个类中重复出现时，这些数据应该被提取到一个独立的类中。
+
+## 识别要点
+
+- 相同的字段组合在多个类中重复
+- 这些字段总是一起传递或使用
+- 参数列表中经常出现相同的参数组合
+- 缺少合适的抽象概念
+
+## 重构建议
+
+1. **提取类**：为数据团创建专门的类
+2. **引入参数对象**：用对象替代长参数列表
+3. **保持数据完整性**：相关数据保持在一起
+
+## 说明
+
+startX, startY 和 endX, endY 经常一起出现，应该创建Point类来封装坐标概念，提高代码的可读性和可维护性。
+\`\`\`
+
+```cpp file="data/examples/data-clumps.cpp"
+class Rectangle {
+private:
+    int startX, startY;
+    int endX, endY;
+public:
+    void draw(int startX, int startY, int endX, int endY);
+};
+
+class Circle {
+private:
+    int centerX, centerY;
+    int radius;
+public:
+    void draw(int centerX, int centerY, int radius);
+};
+
+class Line {
+private:
+    int startX, startY;
+    int endX, endY;
+public:
+    void draw(int startX, int startY, int endX, int endY);
+};
