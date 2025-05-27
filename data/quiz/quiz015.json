@@ -1,0 +1,7 @@
+{
+  "id": "quiz015",
+  "codePath": "quiz015.cpp",
+  "correct": "懒惰类",
+  "choices": ["懒惰类", "过大的类", "中间人", "数据类"],
+  "explanation": "这个例子展示了懒惰类代码味道，这些类（FileUtil、DateFormatter、IntegerWrapper）功能太少，不值得单独存在。懒惰类通常是重构的遗留物或过度设计的结果。应该将它们的功能内联到调用者中，或者合并到其他相关类中，以减少系统中的类数量。"
+}

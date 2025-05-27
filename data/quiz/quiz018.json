@@ -1,0 +1,7 @@
+{
+  "id": "quiz018",
+  "codePath": "quiz018.cpp",
+  "correct": "特性嫉妒",
+  "choices": ["特性嫉妒", "过大的类", "数据类", "冗长函数"],
+  "explanation": "这个例子展示了特性嫉妒代码味道，其中ReportFormatter类的方法（formatChartData和generateSummary）对ReportData类的数据比自己所在的类数据更感兴趣。这些方法大量使用ReportData的属性和方法，并对其数据进行各种计算。这表明这些方法可能应该移到ReportData类中，这样可以提高内聚性，减少对其他类内部实现的依赖。"
+}

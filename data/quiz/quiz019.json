@@ -1,0 +1,7 @@
+{
+  "id": "quiz019",
+  "codePath": "quiz019.cpp",
+  "correct": "不适当的亲密关系",
+  "choices": ["不适当的亲密关系", "特性嫉妒", "数据类", "过度耦合的消息链"],
+  "explanation": "这个例子展示了不适当的亲密关系代码味道，其中Student类通过friend关键字给CourseManager、GradeCalculator和SchoolReport类提供了对其私有成员的访问权限。这些类直接访问并操作Student的内部数据，破坏了封装性，造成了类间的紧耦合。更好的做法是在Student类中提供合适的公共方法来操作这些数据，让其他类通过这些公共接口与Student交互。"
+}

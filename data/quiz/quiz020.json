@@ -1,0 +1,7 @@
+{
+  "id": "quiz020",
+  "codePath": "quiz020.cpp",
+  "correct": "过度耦合的消息链",
+  "choices": ["过度耦合的消息链", "不适当的亲密关系", "中间人", "特性嫉妒"],
+  "explanation": "这个例子展示了过度耦合的消息链代码味道，其中客户端代码需要通过一连串的获取方法调用才能获取所需数据，如'inventory.getProduct(0).getSupplier().getContactInfo().getPhoneNumber().getFormattedNumber()'。这种长链式调用使得客户端代码与对象结构的多层次紧密耦合，如果中间任何一层结构发生变化，客户端代码也需要更改。解决方案是引入委托方法，如在Inventory类中添加getSupplierPhone(int productIndex)方法，隐藏内部导航细节。"
+}

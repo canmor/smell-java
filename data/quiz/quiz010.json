@@ -1,0 +1,7 @@
+{
+  "id": "quiz010",
+  "codePath": "quiz010.cpp",
+  "correct": "异曲同工的类",
+  "choices": ["异曲同工的类", "发散式变化", "数据团", "霰弹式修改"],
+  "explanation": "这个例子展示了三个执行相似功能（发送通知）但接口不同的类（EmailNotifier、SMSAlertSystem和PushNotificationManager）。这些类应该被统一到共同接口下，如创建一个INotifier接口，让所有的通知类实现该接口，这样可以提高代码的一致性，并使客户端代码可以以多态方式处理不同类型的通知。"
+}

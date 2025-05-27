@@ -1,0 +1,7 @@
+{
+  "id": "quiz007",
+  "codePath": "quiz007.cpp",
+  "correct": "数据团",
+  "choices": ["冗长参数列表", "数据团", "原始类型偏执", "过大的类"],
+  "explanation": "数据团是指在多个地方重复出现的相同数据字段组（如这里的shippingStreet、shippingCity、shippingZipCode和shippingCountry）。这些数据应该被封装成一个类（如ShippingAddress），这样可以减少参数数量，增强代码可读性，并集中处理相关逻辑。"
+}
