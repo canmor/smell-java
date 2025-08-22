@@ -33,16 +33,16 @@ export default function BadSmellDetailPage({ params }: PageProps) {
               <Link href="/bad-smells">
                 <Button variant="ghost" size="sm">
                   <ArrowLeft className="mr-2 h-4 w-4" />
-                  返回列表
+                  Back
                 </Button>
               </Link>
               <div className="flex items-center space-x-2">
                 <Code className="h-6 w-6 text-blue-600" />
-                <h1 className="text-xl font-bold">坏味道详情</h1>
+                <h1 className="text-xl font-bold">Smell Detail</h1>
               </div>
             </div>
             <Link href="/quiz">
-              <Button>开始测验</Button>
+              <Button>Start Quiz</Button>
             </Link>
           </div>
         </div>
@@ -67,7 +67,7 @@ export default function BadSmellDetailPage({ params }: PageProps) {
             {/* Content */}
             <Card className="h-fit">
               <CardHeader>
-                <CardTitle>详细说明</CardTitle>
+                <CardTitle>Define</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="prose prose-gray max-w-none prose-headings:text-gray-900 prose-h1:text-xl prose-h2:text-lg prose-h3:text-base prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900">
@@ -81,7 +81,7 @@ export default function BadSmellDetailPage({ params }: PageProps) {
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Code className="h-5 w-5" />
-                  <span>代码示例</span>
+                  <span>Code Example</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -95,11 +95,11 @@ export default function BadSmellDetailPage({ params }: PageProps) {
             <Link href="/bad-smells">
               <Button variant="outline">
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                返回列表
+                Back
               </Button>
             </Link>
             <Link href="/quiz">
-              <Button>测试你的识别能力</Button>
+              <Button>Test Your Recognition Skills</Button>
             </Link>
           </div>
         </div>
