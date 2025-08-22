@@ -5,7 +5,7 @@ nameEn: "Inappropriate Intimacy"
 category: "Couplers"
 description: "两个类过于亲密，知道彼此太多的私有细节。"
 descriptionEn: "Two classes are overly intimate and know too many private details about each other."
-exampleFile: "inappropriate-intimacy.cpp"
+exampleFile: "inappropriate-intimacy.java"
 ---
 
 # Introduction

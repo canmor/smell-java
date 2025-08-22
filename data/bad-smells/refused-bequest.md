@@ -5,7 +5,7 @@ nameEn: "Refused Bequest"
 category: "Object-Orientation Abusers"
 description: "子类不使用父类的某些方法或数据。"
 descriptionEn: "A subclass does not use (or rejects) some of the methods or data it inherits from its parent."
-exampleFile: "refused-bequest.cpp"
+exampleFile: "refused-bequest.java"
 ---
 
 # Introduction

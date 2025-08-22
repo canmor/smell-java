@@ -5,7 +5,7 @@ nameEn: "Message Chains"
 category: "Couplers"
 description: "客户端需要通过一长串的方法调用来获取所需的对象。"
 descriptionEn: "The client needs to obtain the required object through a long chain of method calls."
-exampleFile: "message-chains.cpp"
+exampleFile: "message-chains.java"
 ---
 
 # Introduction

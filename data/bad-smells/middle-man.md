@@ -5,7 +5,7 @@ nameEn: "Middle Man"
 category: "Couplers"
 description: "类的大部分方法都是简单地委托给其他类。"
 descriptionEn: "Most of a class's methods simply delegate to other classes."
-exampleFile: "middle-man.cpp"
+exampleFile: "middle-man.java"
 ---
 
 # Introduction

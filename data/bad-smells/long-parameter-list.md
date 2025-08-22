@@ -5,7 +5,7 @@ nameEn: "Long Parameter List"
 category: "Bloaters"
 description: "函数参数过多，难以理解和使用。"
 descriptionEn: "A function has too many parameters, making it hard to understand and use."
-exampleFile: "long-parameter-list.cpp"
+exampleFile: "long-parameter-list.java"
 ---
 
 # Introduction

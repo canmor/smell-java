@@ -5,7 +5,7 @@ nameEn: "Speculative Generality"
 category: "Dispensables"
 description: "为了未来可能的需求而设计的过度复杂的结构。"
 descriptionEn: "Overly complex structures designed for potential future needs that may never arrive."
-exampleFile: "speculative-generality.cpp"
+exampleFile: "speculative-generality.java"
 ---
 
 # Introduction

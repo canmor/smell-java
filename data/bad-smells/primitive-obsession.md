@@ -5,7 +5,7 @@ nameEn: "Primitive Obsession"
 category: "Bloaters"
 description: "过度使用基本数据类型而不是创建小对象来表示概念。"
 descriptionEn: "Overuse of basic primitive types instead of creating small objects to represent domain concepts."
-exampleFile: "primitive-obsession.cpp"
+exampleFile: "primitive-obsession.java"
 ---
 
 # Introduction

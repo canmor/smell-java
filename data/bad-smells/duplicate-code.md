@@ -5,7 +5,7 @@ nameEn: "Duplicate Code"
 category: "Dispensables"
 description: "相同的代码结构在多个地方重复出现。"
 descriptionEn: "The same code structure appears repeatedly in multiple places."
-exampleFile: "duplicate-code.cpp"
+exampleFile: "duplicate-code.java"
 ---
 
 # Introduction

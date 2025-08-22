@@ -5,7 +5,7 @@ nameEn: "Data Class"
 category: "Dispensables"
 description: "类只包含字段和访问器方法，没有其他功能。"
 descriptionEn: "The class only contains fields and accessor methods and has no other functionality."
-exampleFile: "data-class.cpp"
+exampleFile: "data-class.java"
 ---
 
 # Introduction

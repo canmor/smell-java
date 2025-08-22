@@ -5,7 +5,7 @@ nameEn: "Parallel Inheritance Hierarchies"
 category: "Change Preventers"
 description: "每当为某个类添加子类时，也需要为另一个类添加子类。"
 descriptionEn: "Whenever you add a subclass to one class hierarchy, you must add a corresponding subclass to another."
-exampleFile: "parallel-inheritance-hierarchies.cpp"
+exampleFile: "parallel-inheritance-hierarchies.java"
 ---
 
 # Introduction

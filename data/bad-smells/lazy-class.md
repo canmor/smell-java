@@ -5,7 +5,7 @@ nameEn: "Lazy Class"
 category: "Dispensables"
 description: "类没有做足够的工作来证明其存在的必要性。"
 descriptionEn: "A class does not do enough work to justify its existence."
-exampleFile: "lazy-class.cpp"
+exampleFile: "lazy-class.java"
 ---
 
 # Introduction

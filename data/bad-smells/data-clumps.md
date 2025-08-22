@@ -5,7 +5,7 @@ nameEn: "Data Clumps"
 category: "Bloaters"
 description: "相同的数据项总是一起出现在多个地方。"
 descriptionEn: "The same group of data items always appears together in multiple places."
-exampleFile: "data-clumps.cpp"
+exampleFile: "data-clumps.java"
 ---
 
 # Introduction

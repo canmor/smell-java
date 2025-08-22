@@ -5,7 +5,7 @@ nameEn: "Divergent Change"
 category: "Change Preventers"
 description: "一个类因为不同的原因需要经常修改。"
 descriptionEn: "A class needs to be modified frequently for different, unrelated reasons."
-exampleFile: "divergent-change.cpp"
+exampleFile: "divergent-change.java"
 ---
 
 # Introduction

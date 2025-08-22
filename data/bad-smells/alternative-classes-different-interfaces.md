@@ -5,7 +5,7 @@ nameEn: "Alternative Classes with Different Interfaces"
 category: "Object-Orientation Abusers"
 description: "两个类功能相似但接口不同。"
 descriptionEn: "Two classes have similar functionality but different interfaces."
-exampleFile: "alternative-classes-different-interfaces.cpp"
+exampleFile: "alternative-classes-different-interfaces.java"
 ---
 
 # Introduction

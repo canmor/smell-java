@@ -5,7 +5,7 @@ nameEn: "Temporary Field"
 category: "Object-Orientation Abusers"
 description: "对象中的某些字段只在特定情况下才有值。"
 descriptionEn: "Some fields in an object only have meaningful values in specific situations."
-exampleFile: "temporary-field.cpp"
+exampleFile: "temporary-field.java"
 ---
 
 # Introduction

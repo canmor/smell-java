@@ -5,7 +5,7 @@ nameEn: "Shotgun Surgery"
 category: "Change Preventers"
 description: "每当需要修改时，都需要在多个类中做小修改。"
 descriptionEn: "Whenever a change is needed, small edits must be made across many different classes."
-exampleFile: "shotgun-surgery.cpp"
+exampleFile: "shotgun-surgery.java"
 ---
 
 # Introduction

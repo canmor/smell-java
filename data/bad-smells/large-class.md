@@ -5,7 +5,7 @@ nameEn: "Large Class"
 category: "Bloaters"
 description: "类包含过多的字段、方法或代码行，违反了单一职责原则。"
 descriptionEn: "A class contains too many fields, methods, or lines of code, violating the Single Responsibility Principle."
-exampleFile: "large-class.cpp"
+exampleFile: "large-class.java"
 ---
 
 # Introduction

@@ -5,7 +5,7 @@ nameEn: "Switch Statements"
 category: "Object-Orientation Abusers"
 description: "复杂的switch语句，通常可以用多态替代。"
 descriptionEn: "Complex switch statements that could typically be replaced by polymorphism."
-exampleFile: "switch-statements.cpp"
+exampleFile: "switch-statements.java"
 ---
 
 # Introduction

@@ -5,7 +5,7 @@ nameEn: "Dead Code"
 category: "Dispensables"
 description: "不再被使用的代码。"
 descriptionEn: "Code that is no longer used."
-exampleFile: "dead-code.cpp"
+exampleFile: "dead-code.java"
 ---
 
 # Introduction

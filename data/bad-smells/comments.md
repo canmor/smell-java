@@ -5,7 +5,7 @@ nameEn: "Comments"
 category: "Dispensables"
 description: "代码中有过多的注释，通常表明代码不够清晰。"
 descriptionEn: "Too many comments in the code usually indicate that the code is not clear enough."
-exampleFile: "comments.cpp"
+exampleFile: "comments.java"
 ---
 
 # Introduction

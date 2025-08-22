@@ -5,7 +5,7 @@ nameEn: "Feature Envy"
 category: "Couplers"
 description: "一个方法对其他类的数据比对自己类的数据更感兴趣。"
 descriptionEn: "A method is more interested in the data of other classes than the data of its own class."
-exampleFile: "feature-envy.cpp"
+exampleFile: "feature-envy.java"
 ---
 
 # Introduction
