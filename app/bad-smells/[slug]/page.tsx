@@ -49,7 +49,7 @@ export default function BadSmellDetailPage({ params }: PageProps) {
       </header>
 
       <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="mx-auto">
           {/* Title and Category */}
           <div className="mb-8">
             <div className="flex items-start justify-between mb-4">
@@ -62,27 +62,33 @@ export default function BadSmellDetailPage({ params }: PageProps) {
             <p className="text-xl text-gray-600">{smell.description}</p>
           </div>
 
-          {/* Content */}
-          <Card className="mb-8">
-            <CardContent className="pt-6">
-              <div className="prose prose-gray max-w-none prose-headings:text-gray-900 prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900">
-                <ReactMarkdown>{smell.content}</ReactMarkdown>
-              </div>
-            </CardContent>
-          </Card>
+          {/* Content and Code Example Side by Side */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Content */}
+            <Card className="h-fit">
+              <CardHeader>
+                <CardTitle>详细说明</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="prose prose-gray max-w-none prose-headings:text-gray-900 prose-h1:text-xl prose-h2:text-lg prose-h3:text-base prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900">
+                  <ReactMarkdown>{smell.content}</ReactMarkdown>
+                </div>
+              </CardContent>
+            </Card>
 
-          {/* Code Example */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center space-x-2">
-                <Code className="h-5 w-5" />
-                <span>代码示例</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CodeBlock code={smell.example} language="java" showLineNumbers={true} />
-            </CardContent>
-          </Card>
+            {/* Code Example */}
+            <Card className="h-fit">
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
+                  <Code className="h-5 w-5" />
+                  <span>代码示例</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CodeBlock code={smell.example} language="cpp" showLineNumbers={true} />
+              </CardContent>
+            </Card>
+          </div>
 
           {/* Navigation */}
           <div className="mt-8 flex justify-between">
