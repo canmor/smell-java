@@ -40,7 +40,6 @@ export function getBadSmells(): BadSmell[] {
       const fileContent = fs.readFileSync(filePath, "utf8")
       const { data, content } = matter(fileContent)
 
-      // 读取对应的C++示例文件
       const examplePath = path.join(examplesDir, data.exampleFile)
       console.log(`Loading example from: ${examplePath}`)
       let example = ""
@@ -93,7 +92,6 @@ export function getQuizQuestions(): QuizQuestion[] {
       const fileContent = fs.readFileSync(filePath, "utf8")
       const questionData = JSON.parse(fileContent)
 
-      // 读取对应的C++代码文件
       const codePath = path.join(snippetsDir, questionData.codePath)
       let code = ""
       if (fs.existsSync(codePath)) {

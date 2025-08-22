@@ -278,7 +278,7 @@ export default function QuizPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-700 mb-4">请识别以下 C++ 代码中的坏味道类型：</p>
+              <p className="text-gray-700 mb-4">请识别以下代码中的坏味道类型：</p>
               {currentQ && <CodeBlock code={currentQ.code} language="cpp" showLineNumbers={true} />}
             </CardContent>
           </Card>

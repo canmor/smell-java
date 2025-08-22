@@ -12,7 +12,7 @@ export default function HomePage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Code className="h-8 w-8 text-blue-600" />
-              <h1 className="text-2xl font-bold text-gray-900">Refactor C++</h1>
+              <h1 className="text-2xl font-bold text-gray-900">Refactor</h1>
             </div>
             <nav className="flex space-x-4">
               <Link href="/bad-smells">
@@ -31,7 +31,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-5xl font-bold text-gray-900 mb-6">掌握代码重构的艺术</h2>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            通过学习《重构：改善既有代码的设计》中的经典"坏味道"，提升你的 C++ 代码质量和重构技能
+            通过学习《重构：改善既有代码的设计》中的经典"坏味道"，提升你的代码质量和重构技能
           </p>
           <div className="flex justify-center space-x-4">
             <Link href="/bad-smells">
@@ -53,7 +53,7 @@ export default function HomePage() {
       {/* Features */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">为什么选择 Refactor C++？</h3>
+          <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">为什么选择 Refactor Java？</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card>
               <CardHeader>
@@ -68,10 +68,10 @@ export default function HomePage() {
             <Card>
               <CardHeader>
                 <Code className="h-12 w-12 text-green-600 mb-4" />
-                <CardTitle>C++ 实例</CardTitle>
+                <CardTitle>Java 实例</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription>每种坏味道都配有真实的 C++ 代码示例，贴近实际开发场景</CardDescription>
+                <CardDescription>每种坏味道都配有真实的 Java 代码示例，贴近实际开发场景</CardDescription>
               </CardContent>
             </Card>
 
@@ -121,7 +121,7 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-400">基于《重构：改善既有代码的设计》构建 • 专注 C++ 代码质量提升</p>
+          <p className="text-gray-400">基于《重构：改善既有代码的设计》构建 • 专注 Java 代码质量提升</p>
         </div>
       </footer>
     </div>

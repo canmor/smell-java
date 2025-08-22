@@ -76,11 +76,11 @@ export default function BadSmellDetailPage({ params }: PageProps) {
             <CardHeader>
               <CardTitle className="flex items-center space-x-2">
                 <Code className="h-5 w-5" />
-                <span>C++ 示例</span>
+                <span>代码示例</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <CodeBlock code={smell.example} language="cpp" showLineNumbers={true} />
+              <CodeBlock code={smell.example} language="java" showLineNumbers={true} />
             </CardContent>
           </Card>
 
