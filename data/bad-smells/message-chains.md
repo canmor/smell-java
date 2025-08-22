@@ -4,27 +4,28 @@ nameCn: "过长的消息链"
 nameEn: "Message Chains"
 category: "Couplers"
 description: "客户端需要通过一长串的方法调用来获取所需的对象。"
+descriptionEn: "The client needs to obtain the required object through a long chain of method calls."
 exampleFile: "message-chains.cpp"
 ---
 
-# 简介
+# Introduction
 
-当客户端需要通过一系列的方法调用来获取最终需要的对象时，就出现了消息链。这增加了客户端与多个类的耦合，违反了迪米特法则。
+Message Chains occur when a client must navigate through a sequence of method calls to get the final object it needs. This increases coupling to multiple classes and violates the Law of Demeter.
 
-## 识别要点
+## Key Identifiers
 
-- 长串的方法调用链
-- 客户端需要了解对象的内部结构
-- 修改中间对象会影响客户端代码
-- 违反了"只与直接朋友交谈"的原则
+- Long chains of successive method calls
+- The client must understand internal object structure
+- Changes to intermediate objects ripple into client code
+- Violates the "talk only to your immediate friends" principle
 
-## 重构建议
+## Refactoring Suggestions
 
-1. **隐藏委托关系**：在中间类中提供便捷方法
-2. **提取方法**：将长链调用封装为方法
-3. **移动方法**：将方法移到更合适的类中
-4. **引入局部扩展**：为现有类添加便捷方法
+1. **Hide Delegation**: Provide convenience methods on the intermediate class
+2. **Extract Method**: Wrap the long navigation chain inside a single method
+3. **Move Method**: Relocate behavior to a class that can directly supply the needed data
+4. **Introduce Local Extension**: Add helper/convenience methods (e.g., via wrapper or extension) to shorten access
 
-## 说明
+## Explanation
 
-客户端需要通过很长的调用链才能获取办公室位置，应该在Company类中提供直接的方法，如getManagerOfficeLocation()。
+The client traverses a long chain to obtain the office location. A direct method such as getManagerOfficeLocation() should be added to the Company class to shorten the chain and reduce coupling.

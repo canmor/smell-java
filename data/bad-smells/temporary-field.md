@@ -4,27 +4,28 @@ nameCn: "临时字段"
 nameEn: "Temporary Field"
 category: "Object-Orientation Abusers"
 description: "对象中的某些字段只在特定情况下才有值。"
+descriptionEn: "Some fields in an object only have meaningful values in specific situations."
 exampleFile: "temporary-field.cpp"
 ---
 
-# 简介
+# Introduction
 
-当一个对象的某些字段只在特定算法或情况下才被使用时，这些字段就是临时字段。它们让代码难以理解，因为你期望对象的所有字段都有用。
+Temporary Fields appear when certain fields of an object are only used in specific algorithms or situations. They make code harder to understand because you expect all fields of an object to be generally meaningful.
 
-## 识别要点
+## Key Identifiers
 
-- 某些字段只在特定方法中使用
-- 字段的值在大部分时间为空或无意义
-- 对象的状态不一致
-- 难以理解字段的用途
+- Some fields are only referenced in one or two methods
+- Field values are null/empty/meaningless most of the time
+- Object state appears inconsistent or partially populated
+- It's unclear why the field exists when reading the class
 
-## 重构建议
+## Refactoring Suggestions
 
-1. **提取类**：将临时字段和相关方法提取到新类中
-2. **引入空对象**：用空对象模式处理特殊情况
-3. **使用局部变量**：将临时数据作为方法参数传递
-4. **策略模式**：用不同的策略类处理不同情况
+1. **Extract Class**: Move temporary fields and related methods into a dedicated helper class
+2. **Introduce Null Object**: Use a Null Object to handle special cases instead of optional fields
+3. **Use Local Variables**: Pass temporary data as parameters or keep it local within methods
+4. **Strategy Pattern**: Use different strategy objects for varying scenarios instead of conditional fields
 
-## 说明
+## Explanation
 
-临时字段应该被提取到专门的类中，或者作为方法的局部变量。这样可以让对象的状态更加一致和可预测。
+Temporary fields should be extracted into a dedicated class or converted into local variables. This keeps the object's state consistent and predictable.

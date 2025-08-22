@@ -4,27 +4,28 @@ nameCn: "霰弹式修改"
 nameEn: "Shotgun Surgery"
 category: "Change Preventers"
 description: "每当需要修改时，都需要在多个类中做小修改。"
+descriptionEn: "Whenever a change is needed, small edits must be made across many different classes."
 exampleFile: "shotgun-surgery.cpp"
 ---
 
-# 简介
+# Introduction
 
-当你需要修改某个功能时，发现需要在很多不同的类中做小修改，这就是霰弹式修改。这种情况下，相关的行为被分散在多个类中。
+Shotgun Surgery occurs when implementing a single change forces you to make many small edits across numerous classes. This indicates related behavior is scattered instead of being properly localized.
 
-## 识别要点
+## Key Identifiers
 
-- 修改一个功能需要改动多个类
-- 相关逻辑分散在不同地方
-- 容易遗漏某些修改点
-- 增加了维护成本
+- One feature change requires touching many classes/files
+- Related logic is scattered in multiple places
+- Easy to miss one of the required edit points
+- Higher maintenance cost and risk of inconsistent updates
 
-## 重构建议
+## Refactoring Suggestions
 
-1. **移动方法**：将相关方法移到同一个类中
-2. **内联类**：将小类合并到使用它们的类中
-3. **提取类**：为分散的行为创建专门的类
-4. **使用设计模式**：如策略模式集中管理变化
+1. **Move Method**: Gather related behavior into a single class or cohesive module
+2. **Inline Class**: Merge tiny classes that only fragment logic
+3. **Extract Class**: Create a dedicated class to centralize dispersed responsibilities
+4. **Apply Design Patterns**: Use Strategy/Polymorphism (or similar) to concentrate variation points
 
-## 说明
+## Explanation
 
-添加新支付方式需要修改多个类，应该使用策略模式或多态来集中管理支付逻辑，这样修改时只需要在一个地方进行。
+If adding a new payment method requires edits in many classes, introduce a PaymentStrategy (or polymorphic hierarchy) so new behaviors are added in one focused place rather than scattered changes.

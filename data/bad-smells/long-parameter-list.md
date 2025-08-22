@@ -4,27 +4,28 @@ nameCn: "冗长参数列表"
 nameEn: "Long Parameter List"
 category: "Bloaters"
 description: "函数参数过多，难以理解和使用。"
+descriptionEn: "A function has too many parameters, making it hard to understand and use."
 exampleFile: "long-parameter-list.cpp"
 ---
 
-# 简介
+# Introduction
 
-当函数有太多参数时，它变得难以理解和使用。通常超过3-4个参数就应该考虑重构。长参数列表往往表明函数承担了太多职责。
+When a function has too many parameters, it becomes harder to understand and use. Typically, once a function takes more than 3–4 parameters, refactoring should be considered. A long parameter list usually indicates the function is doing too much.
 
-## 识别要点
+## Key Identifiers
 
-- 函数参数超过3-4个
-- 参数类型相似，容易混淆
-- 调用时需要记住参数顺序
-- 添加新参数时影响所有调用点
+- More than 3–4 parameters
+- Parameters of similar types that are easy to mix up
+- Callers must remember positional ordering
+- Adding a new parameter forces changes at every call site
 
-## 重构建议
+## Refactoring Suggestions
 
-1. **引入参数对象**：将相关参数封装为对象
-2. **保持对象完整**：传递整个对象而不是其字段
-3. **使用构建器模式**：对于复杂对象的创建
-4. **拆分函数**：将大函数拆分为小函数
+1. **Introduce Parameter Object**: Group related parameters into a dedicated object
+2. **Preserve Whole Object**: Pass the whole object instead of plucking its individual fields
+3. **Builder Pattern**: Use a builder for constructing complex objects with many optional parts
+4. **Split Function**: Break one large function into smaller, focused ones
 
-## 说明
+## Explanation
 
-应该创建一个CharacterConfig或CharacterBuilder类来封装这些参数，这样可以提高代码的可读性，减少参数传递错误的可能性。
+A CharacterConfig (or CharacterBuilder) class should encapsulate these parameters to improve readability and reduce the chance of passing arguments in the wrong order.

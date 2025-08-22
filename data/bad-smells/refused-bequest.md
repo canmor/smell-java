@@ -4,27 +4,28 @@ nameCn: "拒绝继承"
 nameEn: "Refused Bequest"
 category: "Object-Orientation Abusers"
 description: "子类不使用父类的某些方法或数据。"
+descriptionEn: "A subclass does not use (or rejects) some of the methods or data it inherits from its parent."
 exampleFile: "refused-bequest.cpp"
 ---
 
-# 简介
+# Introduction
 
-当子类只使用父类的部分功能，或者需要重写父类方法来抛出异常时，就出现了拒绝继承。这表明继承层次设计有问题。
+Refused Bequest occurs when a subclass uses only part of its parent's functionality or overrides inherited methods just to throw exceptions. This signals a flawed inheritance design.
 
-## 识别要点
+## Key Identifiers
 
-- 子类重写方法只为抛出异常
-- 子类不使用父类的某些方法
-- 继承关系不符合"is-a"关系
-- 违反里氏替换原则
+- Subclass overrides methods solely to throw exceptions or disable them
+- Subclass ignores or never calls certain inherited methods
+- Inheritance does not reflect a true "is-a" relationship
+- Violates the Liskov Substitution Principle
 
-## 重构建议
+## Refactoring Suggestions
 
-1. **重新设计继承层次**：创建更合适的抽象
-2. **使用组合替代继承**：用委托模式
-3. **提取超类**：为共同行为创建新的父类
-4. **接口分离**：将大接口拆分为小接口
+1. **Redesign the Hierarchy**: Create a more accurate abstraction
+2. **Prefer Composition**: Replace inheritance with delegation/composition
+3. **Extract Superclass / Interfaces**: Factor shared behavior into a proper parent or interface set
+4. **Interface Segregation**: Split large interfaces into focused ones
 
-## 说明
+## Explanation
 
-企鹅不能飞行，这表明继承层次设计有问题。应该重新设计类层次结构，可能需要将飞行能力提取为单独的接口或特征。
+Penguins cannot fly—yet a Penguin subclass might inherit a fly() method from Bird. This mismatch indicates a hierarchy problem. Redesign by extracting flying capability into a separate interface/trait rather than forcing all birds to implement it.

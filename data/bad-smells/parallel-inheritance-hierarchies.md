@@ -4,27 +4,28 @@ nameCn: "平行继承结构"
 nameEn: "Parallel Inheritance Hierarchies"
 category: "Change Preventers"
 description: "每当为某个类添加子类时，也需要为另一个类添加子类。"
+descriptionEn: "Whenever you add a subclass to one class hierarchy, you must add a corresponding subclass to another."
 exampleFile: "parallel-inheritance-hierarchies.cpp"
 ---
 
-# 简介
+# Introduction
 
-当你发现每次为某个类层次添加子类时，也需要为另一个相关的类层次添加子类时，就出现了平行继承结构。这增加了维护成本。
+Parallel Inheritance Hierarchies occur when every time you add a subclass to one hierarchy you also have to add a corresponding subclass to another related hierarchy. This inflates maintenance cost and couples evolution across modules.
 
-## 识别要点
+## Key Identifiers
 
-- 两个类层次结构相互对应
-- 添加新子类时需要同时修改两个层次
-- 类名往往有相似的前缀或后缀
-- 增加了代码的复杂性
+- Two class hierarchies mirror each other
+- Adding a new subclass in one forces creation in the other
+- Class names share similar prefixes/suffixes indicating pairing
+- Increases structural complexity and change surface area
 
-## 重构建议
+## Refactoring Suggestions
 
-1. **消除一个层次**：让一个层次引用另一个层次
-2. **使用访问者模式**：将操作集中到一个地方
-3. **合并层次**：将相关功能合并到一个类中
-4. **使用策略模式**：用组合替代继承
+1. **Eliminate One Hierarchy**: Have one hierarchy reference or contain behavior from the other instead of mirroring it
+2. **Use Visitor Pattern**: Centralize operations instead of distributing them across paired subclasses
+3. **Merge Hierarchies**: Combine related responsibilities into a single class (or a single hierarchy) where appropriate
+4. **Apply Strategy / Composition**: Replace one dimension of inheritance with pluggable strategy objects
 
-## 说明
+## Explanation
 
-每个Shape都需要对应的Renderer，应该让Shape自己负责渲染，或者使用访问者模式来避免平行的继承结构。
+If every Shape requires a corresponding Renderer subclass, let Shape handle rendering itself (with overridable hooks) or introduce a Visitor/Strategy to decouple rendering from shape types and avoid parallel subclass proliferation.

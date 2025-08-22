@@ -4,26 +4,27 @@ nameCn: "冗长函数"
 nameEn: "Long Method"
 category: "Bloaters"
 description: "函数代码过长，难以阅读和维护。通常是多个职责未拆分的迹象。"
+descriptionEn: "A function is too long, making it hard to read and maintain—usually a sign multiple responsibilities haven't been split."
 exampleFile: "long-method.cpp"
 ---
 
-# 简介
+# Introduction
 
-当一个函数变得过长时，它往往承担了太多的职责。长函数难以理解、测试和维护。一般来说，如果一个函数超过20-30行，就应该考虑拆分。
+When a function becomes too long, it's usually handling too many responsibilities. Long functions are harder to understand, test, and maintain. As a rule of thumb, consider splitting a function once it exceeds 20–30 lines.
 
-## 识别要点
+## Key Identifiers
 
-- 函数行数过多（通常超过20-30行）
-- 函数承担多个职责
-- 难以理解函数的整体逻辑
-- 测试困难，需要考虑多种情况
+- Too many lines of code (often more than 20–30)
+- The function performs multiple distinct responsibilities
+- Overall logic is difficult to grasp at a glance
+- Hard to test: requires many scenarios or setup branches
 
-## 重构建议
+## Refactoring Suggestions
 
-1. **提取方法**：将函数中的逻辑块提取为独立的方法
-2. **分离职责**：确保每个函数只做一件事
-3. **使用有意义的函数名**：让函数名清楚表达其功能
+1. **Extract Method**: Break logical chunks into separate functions
+2. **Separate Responsibilities**: Ensure each function does exactly one thing
+3. **Use Meaningful Names**: Make extracted function names express intent clearly
 
-## 说明
+## Explanation
 
-这个函数承担了太多职责：计算基础分数、装备加成、技能加成和成就加成。应该拆分为多个小函数，每个函数负责一个特定的计算逻辑。
+This function handles too much: base score calculation, equipment bonuses, skill modifiers, and achievement bonuses. It should be split into several smaller functions, each responsible for a specific calculation step.

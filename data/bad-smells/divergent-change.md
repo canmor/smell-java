@@ -4,27 +4,28 @@ nameCn: "发散式变化"
 nameEn: "Divergent Change"
 category: "Change Preventers"
 description: "一个类因为不同的原因需要经常修改。"
+descriptionEn: "A class needs to be modified frequently for different, unrelated reasons."
 exampleFile: "divergent-change.cpp"
 ---
 
-# 简介
+# Introduction
 
-当一个类因为多种不同的原因需要修改时，就出现了发散式变化。这违反了单一职责原则，表明类承担了太多职责。
+When a class needs to be modified for many different reasons, you've encountered Divergent Change. This violates the Single Responsibility Principle (SRP) and indicates the class is doing too much.
 
-## 识别要点
+## Key Identifiers
 
-- 类因为不同原因需要修改
-- 修改一个功能时需要改动类的多个部分
-- 类的职责不明确
-- 违反单一职责原则
+- The class must change for different reasons
+- Modifying one feature requires editing multiple parts of the same class
+- The class's responsibilities are unclear
+- Violates the Single Responsibility Principle
 
-## 重构建议
+## Refactoring Suggestions
 
-1. **提取类**：将不同职责分离到不同类中
-2. **单一职责**：确保每个类只有一个变化原因
-3. **委托模式**：使用组合替代大类
-4. **模块化设计**：按功能领域组织代码
+1. **Extract Class**: Separate distinct responsibilities into their own classes
+2. **Single Responsibility**: Ensure each class has only one reason to change
+3. **Delegate / Composition**: Use composition to replace a large, monolithic class
+4. **Modular Design**: Organize code by functional or domain boundaries
 
-## 说明
+## Explanation
 
-这个类因为薪资政策、税法、报告格式、数据库结构等不同原因需要修改，应该拆分职责，让每个类只负责一个方面的变化。
+This class changes for different reasons: payroll rules, tax regulations, reporting formats, database schema, etc. Responsibilities should be split so each class handles only one axis of change.

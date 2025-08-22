@@ -4,27 +4,28 @@ nameCn: "懒惰类"
 nameEn: "Lazy Class"
 category: "Dispensables"
 description: "类没有做足够的工作来证明其存在的必要性。"
+descriptionEn: "A class does not do enough work to justify its existence."
 exampleFile: "lazy-class.cpp"
 ---
 
-# 简介
+# Introduction
 
-当一个类没有做足够的工作时，它就是懒惰类。这样的类增加了代码的复杂性而没有提供相应的价值，应该被重构或删除。
+When a class does not do enough meaningful work, it becomes a Lazy Class. Such a class adds structural noise and complexity without proportional value and should be refactored or removed.
 
-## 识别要点
+## Key Identifiers
 
-- 类只有很少的方法和字段
-- 类的功能过于简单
-- 类只是简单地委托给其他类
-- 维护成本超过了其价值
+- The class has very few methods or fields
+- Its functionality is overly trivial
+- It simply delegates to other classes
+- Maintenance cost exceeds its value
 
-## 重构建议
+## Refactoring Suggestions
 
-1. **内联类**：将类的功能合并到使用它的类中
-2. **折叠继承层次**：如果子类过于简单，合并到父类
-3. **移动方法**：将方法移到更合适的类中
-4. **删除类**：如果类确实没有价值，直接删除
+1. **Inline Class**: Merge its behavior into the primary consuming class
+2. **Collapse Hierarchy**: If a subclass is too trivial, fold it into its parent
+3. **Move Method**: Relocate methods to a more appropriate class
+4. **Delete Class**: Remove it entirely if it adds no real value
 
-## 说明
+## Explanation
 
-PointPrinter类只有一个简单的方法，可能应该将print方法移到Point类中，或者作为自由函数，而不需要单独的类。
+The PointPrinter class has only a single trivial method. The print behavior likely belongs on the Point class itself or as a standalone utility function—no need for a separate class.

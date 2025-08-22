@@ -4,26 +4,27 @@ nameCn: "数据类"
 nameEn: "Data Class"
 category: "Dispensables"
 description: "类只包含字段和访问器方法，没有其他功能。"
+descriptionEn: "The class only contains fields and accessor methods and has no other functionality."
 exampleFile: "data-class.cpp"
 ---
 
-# 简介
+# Introduction
 
-数据类只包含数据和简单的访问器方法，没有任何行为。这样的类往往表明行为被放在了错误的地方。
+A Data Class contains only data and simple accessor methods, with no behavior. Such classes often indicate that behavior has been placed in the wrong location.
 
-## 识别要点
+## Key Identifiers
 
-- 类只包含字段和getter/setter方法
-- 没有业务逻辑或行为方法
-- 相关行为分散在其他类中
-- 违反了面向对象的封装原则
+- The class contains only fields and getter/setter methods
+- No business logic or behavioral methods
+- Related behavior is scattered across other classes
+- Violates the object-oriented principle of encapsulation
 
-## 重构建议
+## Refactoring Suggestions
 
-1. **移动方法**：将相关行为移到数据类中
-2. **封装字段**：减少不必要的setter方法
-3. **添加行为**：为数据类添加有意义的业务方法
+1. **Move Method**: Move related behavior into the data class
+2. **Encapsulate Field**: Reduce unnecessary setter methods
+3. **Add Behavior**: Add meaningful domain methods to the data class
 
-## 说明
+## Explanation
 
-Customer类只是数据容器，相关的业务行为应该移到Customer类中，让数据和行为保持在一起。
+The Customer class is merely a data container; related business behavior should be moved into the Customer class so that data and behavior stay together.

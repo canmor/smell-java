@@ -4,26 +4,27 @@ nameCn: "数据团"
 nameEn: "Data Clumps"
 category: "Bloaters"
 description: "相同的数据项总是一起出现在多个地方。"
+descriptionEn: "The same group of data items always appears together in multiple places."
 exampleFile: "data-clumps.cpp"
 ---
 
-# 简介
+# Introduction
 
-当你看到相同的数据项（通常是2-3个字段）在多个类中重复出现时，这些数据应该被提取到一个独立的类中。
+When you see the same set of data items (typically 2–3 fields) duplicated across multiple classes, that data should be extracted into its own class.
 
-## 识别要点
+## Key Identifiers
 
-- 相同的字段组合在多个类中重复
-- 这些字段总是一起传递或使用
-- 参数列表中经常出现相同的参数组合
-- 缺少合适的抽象概念
+- The same combination of fields is repeated in multiple classes
+- These fields are always passed or used together
+- The same parameter grouping frequently appears in method parameter lists
+- A proper abstraction concept is missing
 
-## 重构建议
+## Refactoring Suggestions
 
-1. **提取类**：为数据团创建专门的类
-2. **引入参数对象**：用对象替代长参数列表
-3. **保持数据完整性**：相关数据保持在一起
+1. **Extract Class**: Create a dedicated class for the data clump
+2. **Introduce Parameter Object**: Replace long parameter lists with an object
+3. **Keep Data Cohesive**: Keep related data together to preserve integrity
 
-## 说明
+## Explanation
 
-startX, startY 和 endX, endY 经常一起出现，应该创建Point类来封装坐标概念，提高代码的可读性和可维护性。
+startX, startY and endX, endY often appear together. A Point (or perhaps a Range/LineSegment depending on context) class should be introduced to encapsulate the coordinate concept and improve readability and maintainability.

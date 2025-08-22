@@ -4,27 +4,28 @@ nameCn: "原始类型偏执"
 nameEn: "Primitive Obsession"
 category: "Bloaters"
 description: "过度使用基本数据类型而不是创建小对象来表示概念。"
+descriptionEn: "Overuse of basic primitive types instead of creating small objects to represent domain concepts."
 exampleFile: "primitive-obsession.cpp"
 ---
 
-# 简介
+# Introduction
 
-当代码中大量使用基本数据类型（int、string等）来表示应该用对象表示的概念时，就出现了原始类型偏执。这种做法会导致代码缺乏表达力，难以维护。
+Primitive Obsession arises when primitive data types (int, string, etc.) are used excessively to represent domain concepts that deserve their own types. This reduces expressiveness and makes the code harder to maintain.
 
-## 识别要点
+## Key Identifiers
 
-- 大量使用基本数据类型表示复杂概念
-- 相关的验证逻辑分散在各处
-- 缺少类型安全保障
-- 代码缺乏自解释性
+- Heavy use of primitive types to model rich concepts
+- Validation logic duplicated and scattered
+- Lack of type safety (easy to swap arguments of the same primitive type)
+- Code lacks self-explanatory intent
 
-## 重构建议
+## Refactoring Suggestions
 
-1. **引入值对象**：为概念创建专门的类
-2. **封装验证逻辑**：将验证规则放在对象内部
-3. **提高类型安全**：避免参数传递错误
-4. **增强可读性**：让代码更具表达力
+1. **Introduce Value Objects**: Create small domain classes to represent concepts
+2. **Encapsulate Validation**: Put validation rules inside those value objects
+3. **Increase Type Safety**: Prevent parameter mix-ups by using distinct types
+4. **Enhance Readability**: Make intent explicit through domain-specific names
 
-## 说明
+## Explanation
 
-应该创建Email、Phone、Address等值对象来封装这些概念，而不是使用原始的string类型。这样可以将验证逻辑封装在对象内部，提高代码的安全性和可读性。
+Create value objects like Email, Phone, and Address instead of using raw strings. This centralizes validation and increases both safety and readability.

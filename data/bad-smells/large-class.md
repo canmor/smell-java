@@ -4,26 +4,27 @@ nameCn: "过大的类"
 nameEn: "Large Class"
 category: "Bloaters"
 description: "类包含过多的字段、方法或代码行，违反了单一职责原则。"
+descriptionEn: "A class contains too many fields, methods, or lines of code, violating the Single Responsibility Principle."
 exampleFile: "large-class.cpp"
 ---
 
-# 简介
+# Introduction
 
-当一个类试图做太多事情时，它就会变得过大。大类难以理解和维护，通常表明违反了单一职责原则。
+When a class tries to do too many things, it becomes excessively large. Large classes are hard to understand and maintain and usually signal a violation of the Single Responsibility Principle (SRP).
 
-## 识别要点
+## Key Identifiers
 
-- 类的代码行数过多
-- 包含过多的字段和方法
-- 承担多个不相关的职责
-- 难以理解类的整体功能
+- The class has an unusually high line count
+- Too many fields and methods
+- Multiple unrelated responsibilities are mixed together
+- Hard to articulate the class's single, clear purpose
 
-## 重构建议
+## Refactoring Suggestions
 
-1. **提取类**：将相关的字段和方法提取到新的类中
-2. **委托模式**：使用组合替代继承
-3. **单一职责**：确保每个类只有一个变化的原因
+1. **Extract Class**: Move cohesive groups of fields and methods into new classes
+2. **Use Delegation / Composition**: Prefer composition over inheritance for separating concerns
+3. **Enforce Single Responsibility**: Ensure each class has only one reason to change
 
-## 说明
+## Explanation
 
-这个类承担了游戏管理、渲染、音频、网络、文件系统等多个职责，应该拆分为多个专门的类，每个类负责一个特定的领域。
+This class handles game management, rendering, audio, networking, file system access, and more. It should be split into multiple specialized classes, each owning a specific domain concern.

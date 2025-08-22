@@ -4,27 +4,28 @@ nameCn: "死代码"
 nameEn: "Dead Code"
 category: "Dispensables"
 description: "不再被使用的代码。"
+descriptionEn: "Code that is no longer used."
 exampleFile: "dead-code.cpp"
 ---
 
-# 简介
+# Introduction
 
-死代码是不再被调用或使用的代码。它增加了代码库的大小和复杂性，应该被删除。死代码的存在会误导开发者，增加维护成本。
+Dead code is code that is no longer invoked or used. It increases the size and complexity of the codebase and should be removed. Its presence misleads developers and raises maintenance costs.
 
-## 识别要点
+## Key Identifiers
 
-- 方法或类不再被调用
-- 无法到达的代码分支
-- 过时的功能或特性
-- 注释掉的代码块
+- Methods or classes are no longer called
+- Unreachable code branches
+- Outdated features or functionality
+- Large commented-out code blocks
 
-## 重构建议
+## Refactoring Suggestions
 
-1. **删除未使用的方法**：移除不再被调用的方法
-2. **删除未使用的类**：移除不再被使用的类
-3. **删除无用的变量**：移除未使用的变量和字段
-4. **清理注释代码**：删除被注释掉的代码
+1. **Remove Unused Methods**: Delete methods that are never called
+2. **Remove Unused Classes**: Delete classes that are no longer referenced
+3. **Remove Unused Variables**: Delete unused variables and fields
+4. **Clean Commented Code**: Remove commented-out code blocks
 
-## 说明
+## Explanation
 
-oldRenderMethod和deprecatedSaveMethod不再被使用，应该删除这些死代码。保留死代码会增加代码库的复杂性，误导其他开发者。
+oldRenderMethod and deprecatedSaveMethod are no longer used and should be deleted. Keeping dead code adds complexity and misleads other developers.
