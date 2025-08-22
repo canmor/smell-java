@@ -9,96 +9,15 @@ import { Progress } from "@/components/ui/progress"
 import { ArrowLeft, Brain, CheckCircle, XCircle, RotateCcw } from "lucide-react"
 import { CodeBlock } from "@/components/code-block"
 
-// Mock quiz data for now since we need client-side data
-const mockQuizQuestions = [
-  {
-    id: "quiz001",
-    code: `int processOrder(Order order) {
-    if (order.type == "standard") {
-        return order.price * 1.0;
-    } else if (order.type == "premium") {
-        return order.price * 1.1;
-    } else if (order.type == "vip") {
-        return order.price * 1.2;
-    } else if (order.type == "corporate") {
-        return order.price * 0.9;
-    }
-    return order.price;
-}`,
-    correct: "过多的 switch",
-    choices: ["冗长函数", "过多的 switch", "数据团", "原始类型偏执"],
-    explanation: "这里使用了一系列if-else语句来处理不同类型，应该使用多态来替代。",
-  },
-  {
-    id: "quiz002",
-    code: `class User {
-private:
-    std::string firstName;
-    std::string lastName;
-    std::string email;
-    std::string phone;
-    std::string address;
-    std::string city;
-    std::string zipCode;
-    
-public:
-    // 只有getter和setter方法
-    std::string getFirstName() const { return firstName; }
-    void setFirstName(const std::string& name) { firstName = name; }
-    std::string getEmail() const { return email; }
-    void setEmail(const std::string& e) { email = e; }
-    // ... 更多getter/setter
-};`,
-    correct: "数据类",
-    choices: ["过大的类", "数据类", "懒惰类", "原始类型偏执"],
-    explanation: "这个类只包含数据和访问器方法，没有任何行为逻辑。",
-  },
-  {
-    id: "quiz003",
-    code: `void calculateScore(Player player) {
-    int score = 0;
-    
-    // 计算基础分数
-    score += player.level * 100;
-    score += player.experience / 10;
-    
-    // 计算装备加成
-    for (auto& item : player.equipment) {
-        if (item.type == "weapon") {
-            score += item.attack * 2;
-        } else if (item.type == "armor") {
-            score += item.defense * 1.5;
-        }
-    }
-    
-    // 计算技能加成
-    for (auto& skill : player.skills) {
-        if (skill.level > 5) {
-            score += skill.level * skill.multiplier;
-        }
-    }
-    
-    // 计算成就加成
-    int achievementBonus = 0;
-    for (auto& achievement : player.achievements) {
-        if (achievement.isCompleted) {
-            achievementBonus += achievement.points;
-        }
-    }
-    score += achievementBonus * 0.1;
-    
-    // 应用特殊规则
-    if (player.isVIP) {
-        score *= 1.5;
-    }
-    
-    return score;
-}`,
-    correct: "冗长函数",
-    choices: ["冗长函数", "特性嫉妒", "过多的 switch", "重复代码"],
-    explanation: "这个函数过长，承担了太多职责，应该拆分为多个小函数。",
-  },
-]
+// Define our quiz question types
+interface QuizQuestion {
+  id: string
+  codePath?: string
+  code: string
+  correct: string
+  choices: string[]
+  explanation: string
+}
 
 interface QuizState {
   currentQuestion: number
@@ -123,19 +42,43 @@ export default function QuizPage() {
     endTime: null,
   })
 
-  const [shuffledQuestions, setShuffledQuestions] = useState(mockQuizQuestions)
+  const [shuffledQuestions, setShuffledQuestions] = useState<QuizQuestion[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    // Shuffle questions on component mount
-    const shuffled = [...mockQuizQuestions].sort(() => Math.random() - 0.5)
-    setShuffledQuestions(shuffled)
+    // Fetch quiz questions from the API
+    const fetchQuizData = async () => {
+      try {
+        setLoading(true)
+        const response = await fetch('/api/quizzes')
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch quiz data')
+        }
+        
+        const quizData: QuizQuestion[] = await response.json()
+        
+        // Shuffle the questions
+        const shuffled = [...quizData].sort(() => Math.random() - 0.5)
+        setShuffledQuestions(shuffled)
+        setLoading(false)
+      } catch (err) {
+        console.error('Error fetching quiz data:', err)
+        setError('Failed to load quiz questions. Please try again.')
+        setLoading(false)
+      }
+    }
+
+    fetchQuizData()
   }, [])
 
-  const currentQ = shuffledQuestions[quiz.currentQuestion]
-  const progress = ((quiz.currentQuestion + 1) / shuffledQuestions.length) * 100
+  // Only calculate these if questions are loaded
+  const currentQ = shuffledQuestions.length > 0 ? shuffledQuestions[quiz.currentQuestion] : null
+  const progress = shuffledQuestions.length > 0 ? ((quiz.currentQuestion + 1) / shuffledQuestions.length) * 100 : 0
 
   const handleAnswer = (answer: string) => {
-    if (quiz.showFeedback) return
+    if (quiz.showFeedback || !currentQ) return
 
     setQuiz((prev) => ({
       ...prev,
@@ -166,7 +109,7 @@ export default function QuizPage() {
   }
 
   const resetQuiz = () => {
-    const shuffled = [...mockQuizQuestions].sort(() => Math.random() - 0.5)
+    const shuffled = [...shuffledQuestions].sort(() => Math.random() - 0.5)
     setShuffledQuestions(shuffled)
     setQuiz({
       currentQuestion: 0,
@@ -258,6 +201,38 @@ export default function QuizPage() {
     )
   }
 
+  // Show loading state
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center p-8">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-lg text-gray-600">加载测验题目...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Show error state
+  if (error || shuffledQuestions.length === 0) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <Card className="w-full max-w-md">
+          <CardHeader>
+            <CardTitle className="text-center text-red-600">加载失败</CardTitle>
+          </CardHeader>
+          <CardContent className="text-center">
+            <p className="mb-4">{error || "无法加载测验题目，请确保数据文件正确设置。"}</p>
+            <Button onClick={() => window.location.reload()}>
+              <RotateCcw className="mr-2 h-4 w-4" />
+              重试
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -304,13 +279,13 @@ export default function QuizPage() {
             </CardHeader>
             <CardContent>
               <p className="text-gray-700 mb-4">请识别以下 C++ 代码中的坏味道类型：</p>
-              <CodeBlock code={currentQ.code} language="cpp" showLineNumbers={true} />
+              {currentQ && <CodeBlock code={currentQ.code} language="cpp" showLineNumbers={true} />}
             </CardContent>
           </Card>
 
           {/* Choices */}
           <div className="grid gap-4">
-            {currentQ.choices.map((choice, index) => {
+            {currentQ && currentQ.choices.map((choice, index) => {
               const isSelected = quiz.selectedAnswer === choice
               const isCorrect = choice === currentQ.correct
               const showCorrect = quiz.showFeedback && isCorrect
@@ -340,7 +315,7 @@ export default function QuizPage() {
             })}
           </div>
 
-          {quiz.showFeedback && (
+          {quiz.showFeedback && currentQ && (
             <div className="mt-6 p-4 bg-blue-50 rounded-lg">
               <p className="text-blue-800">
                 <strong>正确答案：</strong>
