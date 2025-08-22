@@ -59,7 +59,7 @@ export default function BadSmellDetailPage({ params }: PageProps) {
               </div>
               <Badge className={categoryColors[smell.category]}>{smell.category}</Badge>
             </div>
-            <p className="text-xl text-gray-600">{smell.description}</p>
+            <p className="text-xl text-gray-600">{smell.descriptionEn}</p>
           </div>
 
           {/* Content and Code Example Side by Side */}

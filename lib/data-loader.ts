@@ -8,6 +8,7 @@ export interface BadSmell {
   nameEn: string
   category: string
   description: string
+  descriptionEn: string
   content: string
   example: string
   explanation?: string
@@ -53,6 +54,7 @@ export function getBadSmells(): BadSmell[] {
         nameEn: data.nameEn,
         category: data.category,
         description: data.description,
+        descriptionEn: data.descriptionEn,
         content,
         example,
         explanation: data.explanation,

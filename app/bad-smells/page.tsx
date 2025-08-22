@@ -76,7 +76,7 @@ export default function BadSmellsPage() {
                         </div>
                       </CardHeader>
                       <CardContent>
-                        <CardDescription className="line-clamp-3">{smell.description}</CardDescription>
+                        <CardDescription className="line-clamp-3">{smell.descriptionEn}</CardDescription>
                       </CardContent>
                     </Card>
                   </Link>
