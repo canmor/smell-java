@@ -1,12 +1,12 @@
 以下是整理成 Markdown 格式的 PRD 文档，适合直接放入项目中的 /docs/PRD.md 或用于团队共享：
 
-# 📄 产品需求文档（PRD）：Refactor C++ 网站
+# 📄 产品需求文档（PRD）：Refactor Java 网站
 
 ## 一、项目概述
 
-**项目名称**：Refactor C++  
-**目标用户**：学习 C++ 的开发者、代码审查者、技术团队成员  
-**核心目的**：帮助用户理解并识别《重构：改善既有代码的设计》一书中的典型“坏味道”，并通过 C++ 示例和测验提升识别能力。
+**项目名称**：Refactor Java  
+**目标用户**：学习 Java 的开发者、代码审查者、技术团队成员  
+**核心目的**：帮助用户理解并识别《重构：改善既有代码的设计》一书中的典型“坏味道”，并通过 Java 示例和测验提升识别能力。
 
 ---
 
@@ -16,7 +16,7 @@
 
 #### 功能描述
 
-展示每种“坏味道”的中英文名称、分类、简要说明及一个 C++ 示例。按类别组织如下：
+展示每种“坏味道”的中英文名称、分类、简要说明及一个 Java 示例。按类别组织如下：
 
 #### 坏味道完整列表（共五类 22 项）
 
@@ -69,9 +69,9 @@ category: "Bloaters"
 
 函数代码过长，难以阅读和维护。通常是多个职责未拆分的迹象。
 
-### 示例（C++）
+### 示例（Java）
 
-```cpp
+```java
 int calculateScore(Player p) {
     int score = 0;
     // 冗长处理逻辑
@@ -84,21 +84,21 @@ int calculateScore(Player p) {
 
 #### 功能描述
 
-- 每次测验随机呈现 C++ 坏味道代码片段
+- 每次测验随机呈现 Java 坏味道代码片段
 - 每题 4 个选项，用户选择哪种“坏味道”
 - 答案立即反馈，自动跳转下一题
 - 最终统计总耗时与正确题数
 
 #### 数据结构
 
-- 每题为一个 JSON 文件，引用一个独立的 C++ 示例文件
+- 每题为一个 JSON 文件，引用一个独立的 Java 示例文件
 
 ##### 示例 JSON (`quiz001.json`)
 
 ```json
 {
   "id": "quiz001",
-  "codePath": "snippets/quiz001.cpp",
+  "codePath": "snippets/quiz001.java",
   "correct": "Switch Statements / 过多的 switch",
   "choices": [
     "Long Method / 冗长函数",
@@ -108,9 +108,9 @@ int calculateScore(Player p) {
   ]
 }
 
-示例代码文件 (quiz001.cpp)
+示例代码文件 (quiz001.java)
 
-int handle(int code) {
+public int handle(int code) {
     if (code == 1) doA();
     else if (code == 2) doB();
     else if (code == 3) doC();
@@ -139,7 +139,7 @@ int handle(int code) {
     quiz001.json
     ...
   /snippets
-    quiz001.cpp
+    quiz001.java
     ...
 
 在 Next.js 的 getStaticProps 中读取 JSON 元数据，并同时加载对应 codePath 文件内容。
@@ -154,7 +154,7 @@ int handle(int code) {
 
 /bad-smells/[slug]
 	•	显示中英文名称、分类
-	•	Markdown 渲染正文（含简介 + C++ 示例）
+	•	Markdown 渲染正文（含简介 + Java 示例）
 
 /quiz
 	•	显示测验题目编号、代码片段、选项按钮
