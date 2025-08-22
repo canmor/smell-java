@@ -4,27 +4,28 @@ nameCn: "多余注释"
 nameEn: "Comments"
 category: "Dispensables"
 description: "代码中有过多的注释，通常表明代码不够清晰。"
+descriptionEn: "Too many comments in the code usually indicate that the code is not clear enough."
 exampleFile: "comments.cpp"
 ---
 
-# 简介
+# Introduction
 
-虽然注释很有用，但过多的注释往往表明代码本身不够清晰。好的代码应该是自解释的，注释应该解释"为什么"而不是"做什么"。
+Although comments are useful, too many comments usually indicate that the code itself is not clear. Good code should be self-explanatory, and comments should explain "why" instead of "what".
 
-## 识别要点
+## Key Identifiers
 
-- 注释解释显而易见的代码
-- 注释与代码不同步
-- 大量的行内注释
-- 注释比代码还多
+- Comments explain obvious code
+- Comments are out of sync with the code
+- A large number of inline comments
+- More comments than code
 
-## 重构建议
+## Refactoring Suggestions
 
-1. **提取方法**：用有意义的方法名替代注释
-2. **引入解释性变量**：用变量名解释复杂表达式
-3. **重命名**：使用更清晰的变量和方法名
-4. **删除多余注释**：保留真正有价值的注释
+1. **Extract Method**: Replace comments with meaningful method names  
+2. **Introduce Explaining Variable**: Use variable names to explain complex expressions  
+3. **Rename**: Use clearer variable and method names  
+4. **Remove Redundant Comments**: Keep only truly valuable comments  
 
-## 说明
+## Explanation
 
-这些注释都是多余的，因为代码本身已经很清楚了。应该删除这些注释，让代码更简洁，或者用更好的命名来让代码自解释。
+These comments are redundant because the code is already clear. They should be removed to make the code more concise, or replaced with better naming to make the code self-explanatory.
