@@ -68,8 +68,8 @@ export default function BadSmellsPage() {
                         <div className="flex items-start justify-between">
                           <CardTitle className="text-lg leading-tight">
                             <div className="space-y-1">
-                              <div className="font-bold text-gray-900">{smell.nameCn}</div>
-                              <div className="text-sm font-normal text-gray-500">{smell.nameEn}</div>
+                              <div className="font-bold text-gray-900">{smell.nameEn}</div>
+                              <div className="text-sm font-normal text-gray-500">{smell.nameCn}</div>
                             </div>
                           </CardTitle>
                           <Badge className={categoryColors[smell.category]}>{smell.category}</Badge>

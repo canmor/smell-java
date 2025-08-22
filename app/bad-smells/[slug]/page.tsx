@@ -54,8 +54,8 @@ export default function BadSmellDetailPage({ params }: PageProps) {
           <div className="mb-8">
             <div className="flex items-start justify-between mb-4">
               <div className="space-y-2">
-                <h2 className="text-4xl font-bold text-gray-900 leading-tight">{smell.nameCn}</h2>
-                <p className="text-xl text-gray-500 font-medium">{smell.nameEn}</p>
+                <h2 className="text-4xl font-bold text-gray-900 leading-tight">{smell.nameEn}</h2>
+                <p className="text-xl text-gray-500 font-medium">{smell.nameCn}</p>
               </div>
               <Badge className={categoryColors[smell.category]}>{smell.category}</Badge>
             </div>
