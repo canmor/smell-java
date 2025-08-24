@@ -101,6 +101,7 @@ int calculateScore(Player p) {
     // 冗长处理逻辑
     return score;
 }
+```
 
 ---
 
@@ -131,15 +132,18 @@ int calculateScore(Player p) {
     "夸夸其谈通用性"
   ]
 }
+```
 
 示例代码文件 (quiz001.java)
 
+```java
 public int handle(int code) {
     if (code == 1) doA();
     else if (code == 2) doB();
     else if (code == 3) doC();
     return 0;
 }
+```
 
 
 ⸻
