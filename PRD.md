@@ -37,6 +37,7 @@
 
 ##### 🛑 Change Preventers（变更抑制器）
 
+- Mysterious Name / 神秘命名
 - Divergent Change / 发散式变化  
 - Shotgun Surgery / 霰弹式修改  
 - Parallel Inheritance Hierarchies / 平行继承体系  
