@@ -57,12 +57,12 @@ export function CodeBlock({ code, language = "cpp", showLineNumbers = true, clas
         {copied ? (
           <>
             <Check className="h-4 w-4 mr-1" />
-            已复制
+            Copied
           </>
         ) : (
           <>
             <Copy className="h-4 w-4 mr-1" />
-            复制
+            Copy
           </>
         )}
       </Button>
