@@ -1,6 +1,6 @@
 ---
 slug: "parallel-inheritance-hierarchies"
-nameCn: "平行继承结构"
+nameCn: "平行继承体系"
 nameEn: "Parallel Inheritance Hierarchies"
 category: "Change Preventers"
 description: "每当为某个类添加子类时，也需要为另一个类添加子类。"

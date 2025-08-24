@@ -1,7 +1,7 @@
 {
   "id": "quiz006",
-  "codePath": "quiz006.cpp",
-  "correct": "冗长参数列表",
-  "choices": ["冗长参数列表", "数据团", "过多的 switch", "特性嫉妒"],
-  "explanation": "这个方法有太多参数（14个），使得调用和维护都变得困难。这种情况下，应该考虑引入参数对象或使用构建器模式来管理参数。"
+  "codePath": "quiz006.java",
+  "correct": "过长参数列表",
+  "choices": ["过长参数列表", "数据泥团", "重复的 switch", "依恋情结"],
+  "explanation": "This method has too many parameters (19), making it difficult to call and maintain. In this situation, consider introducing a parameter object or using the builder pattern to manage parameters."
 }

@@ -1,7 +1,7 @@
 {
   "id": "quiz011",
-  "codePath": "quiz011.cpp",
+  "codePath": "quiz011.java",
   "correct": "发散式变化",
-  "choices": ["发散式变化", "霰弹式修改", "特性嫉妒", "数据团"],
-  "explanation": "这个例子展示了发散式变化代码味道，其中Order类因为不同原因（支付系统、物流系统、库存系统、报告系统等变化）需要被修改。这违反了单一职责原则，应该将不同职责分离到专门的类中（如PaymentProcessor、ShippingManager、InventoryManager、ReportGenerator），使每个类只因一个原因而变化。"
+  "choices": ["发散式变化", "霰弹式修改", "依恋情结", "数据泥团"],
+  "explanation": "This example demonstrates the divergent change code smell, where the Order class needs to be modified for different reasons (changes in payment systems, logistics systems, inventory systems, reporting systems, etc.). This violates the single responsibility principle. Different responsibilities should be separated into dedicated classes (like PaymentProcessor, ShippingManager, InventoryManager, ReportGenerator), so that each class only changes for one reason."
 }

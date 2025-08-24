@@ -1,7 +1,7 @@
 {
   "id": "quiz013",
-  "codePath": "quiz013.cpp",
-  "correct": "过多的注释",
-  "choices": ["过多的注释", "复杂条件", "冗长函数", "重复代码"],
-  "explanation": "这个例子中充斥着过多且不必要的注释，解释了一些显而易见的代码逻辑（如解释"库存足够，返回true"）。好的代码应该是自解释的，通过使用有意义的命名和清晰的结构来减少对注释的需求。过多的注释往往表明代码本身缺乏清晰性，或者有不好的设计。"
+  "codePath": "quiz013.java",
+  "correct": "注释",
+  "choices": ["注释", "重复的 switch", "过长函数", "重复代码"],
+  "explanation": "This example is filled with excessive and unnecessary comments that explain obvious code logic (such as explaining 'inventory is sufficient, return true'). Good code should be self-explanatory, reducing the need for comments through meaningful naming and clear structure. Excessive comments often indicate that the code itself lacks clarity or has poor design."
 }

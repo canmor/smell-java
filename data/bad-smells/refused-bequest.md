@@ -1,6 +1,6 @@
 ---
 slug: "refused-bequest"
-nameCn: "拒绝继承"
+nameCn: "被拒绝的遗赠"
 nameEn: "Refused Bequest"
 category: "Object-Orientation Abusers"
 description: "子类不使用父类的某些方法或数据。"

@@ -1,7 +1,7 @@
 {
   "id": "quiz014",
-  "codePath": "quiz014.cpp",
+  "codePath": "quiz014.java",
   "correct": "重复代码",
-  "choices": ["重复代码", "特性嫉妒", "冗长函数", "过多的 switch"],
-  "explanation": "这个例子中存在大量重复代码，特别是卡号、过期日期的验证逻辑在三个方法中几乎完全相同。这种重复应该被提取到一个共享方法中，如validateCardDetails()，以提高代码的可维护性并减少出错的可能性。"
+  "choices": ["重复代码", "依恋情结", "过长函数", "重复的 switch"],
+  "explanation": "This example contains a lot of duplicate code, particularly the validation logic for card numbers and expiration dates that is almost identical across three methods. This duplication should be extracted into a shared method, such as validateCardDetails(), to improve code maintainability and reduce the possibility of errors."
 }

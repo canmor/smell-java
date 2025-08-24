@@ -1,7 +1,7 @@
 {
   "id": "quiz012",
-  "codePath": "quiz012.cpp",
+  "codePath": "quiz012.java",
   "correct": "霰弹式修改",
-  "choices": ["霰弹式修改", "发散式变化", "中间人", "特性嫉妒"],
-  "explanation": "这个例子展示了霰弹式修改代码味道：当需要添加一个新的会员等级时，需要同时修改多个类（DiscountCalculator、RewardPointsCalculator、MemberBenefitDisplay、CustomerService等）。应该将会员等级相关的逻辑封装在一个地方，例如创建MemberLevel类层次结构或使用策略模式，这样添加新等级时只需修改一处代码。"
+  "choices": ["霰弹式修改", "发散式变化", "中间人", "依恋情结"],
+  "explanation": "This example demonstrates the shotgun surgery code smell: when adding a new membership level, multiple classes need to be modified simultaneously (DiscountCalculator, RewardPointsCalculator, MemberBenefitDisplay, CustomerService, etc.). Membership level-related logic should be encapsulated in one place, for example by creating a MemberLevel class hierarchy or using the strategy pattern, so that adding a new level only requires modifying code in one place."
 }

@@ -1,6 +1,6 @@
 ---
 slug: "data-class"
-nameCn: "数据类"
+nameCn: "纯数据类"
 nameEn: "Data Class"
 category: "Dispensables"
 description: "类只包含字段和访问器方法，没有其他功能。"

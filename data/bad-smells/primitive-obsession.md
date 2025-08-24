@@ -1,6 +1,6 @@
 ---
 slug: "primitive-obsession"
-nameCn: "原始类型偏执"
+nameCn: "基本类型偏执"
 nameEn: "Primitive Obsession"
 category: "Bloaters"
 description: "过度使用基本数据类型而不是创建小对象来表示概念。"

@@ -8,23 +8,14 @@ import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { ArrowLeft, Brain, CheckCircle, XCircle, RotateCcw } from "lucide-react"
 import { CodeBlock } from "@/components/code-block"
-
-// Define our quiz question types
-interface QuizQuestion {
-  id: string
-  codePath?: string
-  code: string
-  correct: string
-  choices: string[]
-  explanation: string
-}
+import { QuizQuestion, BadSmell } from "@/lib/data-loader"
 
 interface QuizState {
   currentQuestion: number
   score: number
   answers: boolean[]
   showResult: boolean
-  selectedAnswer: string | null
+  selectedAnswer: BadSmell | null
   showFeedback: boolean
   startTime: number
   endTime: number | null
@@ -77,8 +68,8 @@ export default function QuizPage() {
   const currentQ = shuffledQuestions.length > 0 ? shuffledQuestions[quiz.currentQuestion] : null
   const progress = shuffledQuestions.length > 0 ? ((quiz.currentQuestion + 1) / shuffledQuestions.length) * 100 : 0
 
-  const handleAnswer = (answer: string) => {
-    if (quiz.showFeedback || !currentQ) return
+  const handleAnswer = (answer: BadSmell | null) => {
+    if (quiz.showFeedback || !currentQ || !answer) return
 
     setQuiz((prev) => ({
       ...prev,
@@ -86,7 +77,7 @@ export default function QuizPage() {
       showFeedback: true,
     }))
 
-    const isCorrect = answer === currentQ.correct
+    const isCorrect = answer.slug === currentQ.correct?.slug
 
     setTimeout(() => {
       setQuiz((prev) => {
@@ -286,8 +277,10 @@ export default function QuizPage() {
           {/* Choices */}
           <div className="grid gap-4">
             {currentQ && currentQ.choices.map((choice, index) => {
-              const isSelected = quiz.selectedAnswer === choice
-              const isCorrect = choice === currentQ.correct
+              if (!choice) return null // Skip null choices
+              
+              const isSelected = quiz.selectedAnswer?.slug === choice.slug
+              const isCorrect = choice.slug === currentQ.correct?.slug
               const showCorrect = quiz.showFeedback && isCorrect
               const showWrong = quiz.showFeedback && isSelected && !isCorrect
 
@@ -308,7 +301,7 @@ export default function QuizPage() {
                         {showWrong && <XCircle className="h-5 w-5" />}
                       </>
                     )}
-                    <span>{choice}</span>
+                    <span>{choice.nameEn}</span>
                   </div>
                 </Button>
               )
@@ -319,7 +312,7 @@ export default function QuizPage() {
             <div className="mt-6 p-4 bg-blue-50 rounded-lg">
               <p className="text-blue-800">
                 <strong>正确答案：</strong>
-                {currentQ.correct}
+                {currentQ.correct?.nameEn || "未知"}
               </p>
               {currentQ.explanation && (
                 <p className="text-blue-700 mt-2">

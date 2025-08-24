@@ -1,6 +1,6 @@
 ---
 slug: "feature-envy"
-nameCn: "特性嫉妒"
+nameCn: "依恋情结"
 nameEn: "Feature Envy"
 category: "Couplers"
 description: "一个方法对其他类的数据比对自己类的数据更感兴趣。"

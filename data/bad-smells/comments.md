@@ -1,6 +1,6 @@
 ---
 slug: "comments"
-nameCn: "多余注释"
+nameCn: "注释"
 nameEn: "Comments"
 category: "Dispensables"
 description: "代码中有过多的注释，通常表明代码不够清晰。"

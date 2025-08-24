@@ -1,7 +1,7 @@
 {
   "id": "quiz021",
-  "codePath": "quiz021.cpp",
+  "codePath": "quiz021.java",
   "correct": "中间人",
-  "choices": ["中间人", "过度耦合的消息链", "不适当的亲密关系", "特性嫉妒"],
-  "explanation": "这个例子展示了中间人代码味道，其中PrinterFacade和NotificationService类几乎不提供任何额外功能，只是简单地委托给它们包装的类（Printer和EmailSender）。这种情况下，中间人类增加了系统的复杂性，而没有提供足够的价值。应该考虑直接让客户端使用底层类，或者让中间人提供更多的功能来证明其存在的必要性。"
+  "choices": ["中间人", "过长的消息链", "不适当的亲密关系", "依恋情结"],
+  "explanation": "This example demonstrates the middle man code smell, where the PrinterFacade class provides almost no additional functionality, simply delegating all method calls to the underlying Printer class without adding any value. The PrinterFacade acts as an unnecessary layer that just forwards requests. In this situation, the middle man class adds complexity to the system without providing sufficient benefit. Consider having clients use the Printer class directly, or have the PrinterFacade provide more meaningful functionality to justify its existence."
 }

@@ -1,7 +1,7 @@
 {
   "id": "quiz016",
-  "codePath": "quiz016.cpp",
+  "codePath": "quiz016.java",
   "correct": "死代码",
-  "choices": ["死代码", "懒惰类", "过多的注释", "夸夸其谈的未来性"],
-  "explanation": "这个例子中包含多种形式的死代码：未使用的变量（isLegacyMode、tempVariable）、永远不会执行的条件块（if(false)）、没有被调用的方法（legacyProcessing、calculateStatistics、archiveOldOrders）、被注释掉的旧代码（oldPaymentMethod）以及因提前返回而永远不会执行的代码（generateReport方法中return后的代码）。这些代码应该被移除，以提高代码的可读性和可维护性。"
+  "choices": ["死代码", "懒惰类", "注释", "夸夸其谈通用性"],
+  "explanation": "This example contains multiple forms of dead code: unused variables (isLegacyMode, tempVariable, unusedList), conditional blocks that will never execute (if(false) and if(neverTrue)), methods that are never called (legacyProcessing, calculateStatistics, generateCharts, handleInvalidPayment, formatCurrency), commented-out code (processPayment method), and code that will never execute due to early returns (code after return in generateReport method). This dead code should be removed to improve code readability and maintainability."
 }

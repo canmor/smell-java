@@ -1,6 +1,6 @@
 ---
 slug: "data-clumps"
-nameCn: "数据团"
+nameCn: "数据泥团"
 nameEn: "Data Clumps"
 category: "Bloaters"
 description: "相同的数据项总是一起出现在多个地方。"

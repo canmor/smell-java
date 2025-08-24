@@ -1,7 +1,7 @@
 {
   "id": "quiz002",
-  "codePath": "quiz002.cpp",
-  "correct": "数据类",
-  "choices": ["过大的类", "数据类", "懒惰类", "原始类型偏执"],
-  "explanation": "这个类只包含数据和访问器方法，没有任何行为逻辑。"
+  "codePath": "quiz002.java",
+  "correct": "纯数据类",
+  "choices": ["过大的类", "纯数据类", "懒惰类", "基本类型偏执"],
+  "explanation": "This class only contains data and accessor methods, with no behavioral logic."
 }

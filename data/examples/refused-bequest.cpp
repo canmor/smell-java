@@ -19,7 +19,7 @@ public:
 
 class Penguin : public Bird {
 public:
-    // 拒绝继承：企鹅不能飞
+    // 被拒绝的遗赠：企鹅不能飞
     void fly() override {
         throw std::runtime_error("Penguins can't fly!");
     }

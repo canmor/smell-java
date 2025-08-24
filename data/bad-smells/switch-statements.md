@@ -1,7 +1,7 @@
 ---
 slug: "switch-statements"
-nameCn: "过多的 switch"
-nameEn: "Switch Statements"
+nameCn: "重复的 switch"
+nameEn: "Repeated Switches"
 category: "Object-Orientation Abusers"
 description: "复杂的switch语句，通常可以用多态替代。"
 descriptionEn: "Complex switch statements that could typically be replaced by polymorphism."

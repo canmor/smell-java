@@ -1,7 +1,7 @@
 {
   "id": "quiz022",
-  "codePath": "quiz022.cpp",
+  "codePath": "quiz022.java",
   "correct": "平行继承体系",
-  "choices": ["平行继承体系", "异曲同工的类", "夸夸其谈的未来性", "过大的类"],
-  "explanation": "这个例子展示了平行继承体系代码味道，其中每当我们为Shape层次结构创建一个子类（如Circle、Square、Triangle），我们同时也必须为ShapeRenderer层次结构创建一个对应的子类（如CircleRenderer、SquareRenderer、TriangleRenderer）。这种平行的类层次结构增加了维护负担，因为每添加一种形状，就必须同时添加对应的渲染器和工厂类。解决方法是使用组合替代继承，或者将这两个层次结构合并成一个。"
+  "choices": ["平行继承体系", "异曲同工的类", "夸夸其谈通用性", "过大的类"],
+  "explanation": "This example demonstrates the parallel inheritance hierarchies code smell, where whenever we create a subclass for the Shape hierarchy (like Circle, Square, Triangle), we must also create a corresponding subclass for the ShapeRenderer hierarchy (like CircleRenderer, SquareRenderer, TriangleRenderer). This parallel class hierarchy increases maintenance burden because every time a new shape is added, corresponding renderer and factory classes must also be added. The solution is to use composition instead of inheritance, or merge these two hierarchies into one."
 }

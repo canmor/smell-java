@@ -1,7 +1,7 @@
 {
   "id": "quiz010",
-  "codePath": "quiz010.cpp",
+  "codePath": "quiz010.java",
   "correct": "异曲同工的类",
-  "choices": ["异曲同工的类", "发散式变化", "数据团", "霰弹式修改"],
-  "explanation": "这个例子展示了三个执行相似功能（发送通知）但接口不同的类（EmailNotifier、SMSAlertSystem和PushNotificationManager）。这些类应该被统一到共同接口下，如创建一个INotifier接口，让所有的通知类实现该接口，这样可以提高代码的一致性，并使客户端代码可以以多态方式处理不同类型的通知。"
+  "choices": ["异曲同工的类", "发散式变化", "数据泥团", "霰弹式修改"],
+  "explanation": "This example shows three classes (EmailNotifier, SMSAlertSystem, and PushNotificationManager) that perform similar functions (sending notifications) but have different interfaces. These classes should be unified under a common interface, such as creating an INotifier interface that all notification classes implement, which would improve code consistency and allow client code to handle different types of notifications polymorphically."
 }

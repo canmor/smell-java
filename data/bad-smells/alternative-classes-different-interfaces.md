@@ -1,6 +1,6 @@
 ---
 slug: "alternative-classes-different-interfaces"
-nameCn: "不同接口的相似类"
+nameCn: "异曲同工的类"
 nameEn: "Alternative Classes with Different Interfaces"
 category: "Object-Orientation Abusers"
 description: "两个类功能相似但接口不同。"

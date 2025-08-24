@@ -22,37 +22,37 @@
 
 ##### 🧱 Bloaters（膨胀味道）
 
-- Long Method / 冗长函数  
+- Long Method / 过长函数  
 - Large Class / 过大的类  
-- Primitive Obsession / 原始类型偏执  
-- Long Parameter List / 冗长参数列表  
-- Data Clumps / 数据团  
+- Primitive Obsession / 基本类型偏执  
+- Long Parameter List / 过长参数列表  
+- Data Clumps / 数据泥团  
 
 ##### 🧩 Object-Orientation Abusers（面向对象滥用）
 
-- Switch Statements / 过多的 switch  
+- Repeated Switches / 重复的 switch  
 - Temporary Field / 临时字段  
-- Refused Bequest / 拒绝继承  
+- Refused Bequest / 被拒绝的遗赠  
 - Alternative Classes with Different Interfaces / 不同接口的相似类  
 
 ##### 🛑 Change Preventers（变更抑制器）
 
 - Divergent Change / 发散式变化  
 - Shotgun Surgery / 霰弹式修改  
-- Parallel Inheritance Hierarchies / 平行继承结构  
+- Parallel Inheritance Hierarchies / 平行继承体系  
 
 ##### 🧹 Dispensables（可清除对象）
 
 - Comments / 多余注释  
 - Duplicate Code / 重复代码  
 - Lazy Class / 懒惰类  
-- Data Class / 数据类  
+- Data Class / 纯数据类  
 - Dead Code / 死代码  
-- Speculative Generality / 过度设计  
+- Speculative Generality / 夸夸其谈通用性  
 
 ##### 🔗 Couplers（过度耦合）
 
-- Feature Envy / 特性嫉妒  
+- Feature Envy / 依恋情结  
 - Inappropriate Intimacy / 不适当的亲密关系  
 - Message Chains / 过长的消息链  
 - Middle Man / 中间人  
@@ -61,7 +61,7 @@
 
 ```markdown
 ---
-name: "Long Method / 冗长函数"
+name: "Long Method / 过长函数"
 category: "Bloaters"
 ---
 
@@ -99,12 +99,12 @@ int calculateScore(Player p) {
 {
   "id": "quiz001",
   "codePath": "snippets/quiz001.java",
-  "correct": "Switch Statements / 过多的 switch",
+  "correct": "Repeated Switches / 重复的 switch",
   "choices": [
-    "Long Method / 冗长函数",
-    "Switch Statements / 过多的 switch",
-    "Data Clumps / 数据团",
-    "Speculative Generality / 过度设计"
+    "Long Method / 过长函数",
+    "Repeated Switches / 重复的 switch",
+    "Data Clumps / 数据泥团",
+    "Speculative Generality / 夸夸其谈通用性"
   ]
 }
 

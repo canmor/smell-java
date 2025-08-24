@@ -1,6 +1,6 @@
 ---
 slug: "speculative-generality"
-nameCn: "过度设计"
+nameCn: "夸夸其谈通用性"
 nameEn: "Speculative Generality"
 category: "Dispensables"
 description: "为了未来可能的需求而设计的过度复杂的结构。"

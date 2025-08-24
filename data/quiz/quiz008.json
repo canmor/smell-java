@@ -1,7 +1,7 @@
 {
   "id": "quiz008",
-  "codePath": "quiz008.cpp",
+  "codePath": "quiz008.java",
   "correct": "临时字段",
-  "choices": ["临时字段", "发散式变化", "数据类", "霰弹式修改"],
-  "explanation": "这个类中有几个字段（discountPercentage、isHolidaySeason、seasonalBonus、appliedPromotions）只在特定条件（季末促销）下使用，其余时间它们没有意义。这就是临时字段味道，应将这些字段和相关逻辑提取到一个专门的类（如SeasonalDiscountCalculator）中。"
+  "choices": ["临时字段", "发散式变化", "纯数据类", "霰弹式修改"],
+  "explanation": "This class has several fields (discountPercentage, isHolidaySeason, seasonalBonus, appliedPromotions) that are only used under specific conditions (end-of-season promotions), and are meaningless the rest of the time. This is the temporary field smell, and these fields and related logic should be extracted into a dedicated class (like SeasonalDiscountCalculator)."
 }

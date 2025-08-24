@@ -17,8 +17,8 @@ export interface BadSmell {
 export interface QuizQuestion {
   id: string
   code: string
-  correct: string
-  choices: string[]
+  correct: BadSmell | null
+  choices: (BadSmell | null)[]
   explanation?: string
 }
 
@@ -77,6 +77,11 @@ export function getBadSmellBySlug(slug: string): BadSmell | null {
   return badSmells.find((smell) => smell.slug === slug) || null
 }
 
+function getBadSmellByNameCn(nameCn: string): BadSmell | null {
+  const badSmells = getBadSmells()
+  return badSmells.find((smell) => smell.nameCn === nameCn) || null
+}
+
 export function getQuizQuestions(): QuizQuestion[] {
   const quizDir = path.join(dataDir, "quiz")
   const snippetsDir = path.join(dataDir, "snippets")
@@ -103,8 +108,8 @@ export function getQuizQuestions(): QuizQuestion[] {
       questions.push({
         id: questionData.id,
         code,
-        correct: questionData.correct,
-        choices: questionData.choices,
+        correct: getBadSmellByNameCn(questionData.correct),
+        choices: questionData.choices.map((choice: string) => getBadSmellByNameCn(choice)),
         explanation: questionData.explanation,
       })
     }

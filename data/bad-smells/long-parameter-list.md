@@ -1,6 +1,6 @@
 ---
 slug: "long-parameter-list"
-nameCn: "冗长参数列表"
+nameCn: "过长参数列表"
 nameEn: "Long Parameter List"
 category: "Bloaters"
 description: "函数参数过多，难以理解和使用。"

@@ -1,6 +1,6 @@
 ---
 slug: "long-method"
-nameCn: "冗长函数"
+nameCn: "过长函数"
 nameEn: "Long Method"
 category: "Bloaters"
 description: "函数代码过长，难以阅读和维护。通常是多个职责未拆分的迹象。"

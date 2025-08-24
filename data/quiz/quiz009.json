@@ -1,7 +1,7 @@
 {
   "id": "quiz009",
-  "codePath": "quiz009.cpp",
+  "codePath": "quiz009.java",
   "correct": "被拒绝的遗赠",
-  "choices": ["被拒绝的遗赠", "异曲同工的类", "中间人", "特性嫉妒"],
-  "explanation": "这个例子展示了被拒绝的遗赠代码味道，其中ElectricBicycle类继承了Vehicle类，但拒绝了多个继承来的方法（startEngine、stopEngine、refuel、changeGear）。这表明继承关系可能不合适，应该考虑使用组合替代继承，或者重新设计类层次结构，引入更合适的抽象（如可以创建Bicycle基类，然后让ElectricBicycle继承它）。"
+  "choices": ["被拒绝的遗赠", "异曲同工的类", "中间人", "依恋情结"],
+  "explanation": "This example demonstrates the refused bequest code smell, where the ElectricBicycle class inherits from the Vehicle class but refuses multiple inherited methods (startEngine, stopEngine, refuel, changeGear). This indicates that the inheritance relationship may be inappropriate, and composition should be considered instead of inheritance, or the class hierarchy should be redesigned with more suitable abstractions (such as creating a Bicycle base class for ElectricBicycle to inherit from)."
 }
