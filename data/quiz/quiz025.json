@@ -1,0 +1,7 @@
+{
+  "id": "quiz025",
+  "codePath": "quiz025.java",
+  "correct": "可变数据",
+  "choices": ["可变数据", "全局数据", "数据泥团", "依恋情结"],
+  "explanation": "This code exhibits the Mutable Data code smell. The ShoppingCart object is shared and modified by multiple classes (OrderService, DiscountService, TaxService) without proper encapsulation. Each class directly modifies the cart's items list and properties, making it difficult to track changes and potentially causing unexpected behavior. The totalPrice field is also derived data that gets manually updated, which could become inconsistent. The solution would be to encapsulate the cart's data with proper methods that control how modifications are made."
+}

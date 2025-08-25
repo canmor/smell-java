@@ -1,0 +1,7 @@
+{
+  "id": "quiz026",
+  "codePath": "quiz026.java",
+  "correct": "循环语句",
+  "choices": ["循环语句", "过长函数", "基本类型偏执", "数据泥团"],
+  "explanation": "This code exhibits the Loops code smell. The traditional for-each loops and manual accumulation patterns are outdated and can be replaced with modern functional programming constructs. The filtering, mapping, and collecting operations could be much clearer using Stream API pipeline operations like filter(), map(), and collect(). This would make the code more readable and express the intent more clearly than the imperative loop-based approach."
+}

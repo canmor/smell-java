@@ -22,41 +22,46 @@
 
 ##### 🧱 Bloaters（膨胀味道）
 
-- Long Method / 过长函数  
-- Large Class / 过大的类  
-- Primitive Obsession / 基本类型偏执  
-- Long Parameter List / 过长参数列表  
-- Data Clumps / 数据泥团  
+* Long Method / 过长函数  
+* Large Class / 过大的类  
+* Primitive Obsession / 基本类型偏执  
+* Long Parameter List / 过长参数列表  
+* Data Clumps / 数据泥团  
 
 ##### 🧩 Object-Orientation Abusers（面向对象滥用）
 
-- Repeated Switches / 重复的 switch  
-- Temporary Field / 临时字段  
-- Refused Bequest / 被拒绝的遗赠  
-- Alternative Classes with Different Interfaces / 不同接口的相似类  
+* Repeated Switches / 重复的 switch
+* Alternative Classes with Different Interfaces / 异曲同工的类
+* Temporary Field / 临时字段  
+* Refused Bequest / 被拒绝的遗赠  
 
 ##### 🛑 Change Preventers（变更抑制器）
 
-- Mysterious Name / 神秘命名
-- Divergent Change / 发散式变化  
-- Shotgun Surgery / 霰弹式修改  
+* Mysterious Name / 神秘命名
+* Mutable Data / 可变数据
+* Divergent Change / 发散式变化  
+* Shotgun Surgery / 霰弹式修改  
 - Parallel Inheritance Hierarchies / 平行继承体系  
 
 ##### 🧹 Dispensables（可清除对象）
 
-- Comments / 多余注释  
-- Duplicate Code / 重复代码  
+* Comments / 多余注释  
+* Duplicate Code / 重复代码
+* Loops / 循环语句
+* Lazy Element / 冗赘的元素
 - Lazy Class / 懒惰类  
-- Data Class / 纯数据类  
+* Data Class / 纯数据类  
 - Dead Code / 死代码  
-- Speculative Generality / 夸夸其谈通用性  
+* Speculative Generality / 夸夸其谈通用性  
 
 ##### 🔗 Couplers（过度耦合）
 
-- Feature Envy / 依恋情结  
+* Global Data / 全局数据
+* Feature Envy / 依恋情结
+* Insider Trading / 内部交易
 - Inappropriate Intimacy / 不适当的亲密关系  
-- Message Chains / 过长的消息链  
-- Middle Man / 中间人  
+* Message Chains / 过长的消息链  
+* Middle Man / 中间人  
 
 #### 每种坏味道的内容结构（Markdown）
 
