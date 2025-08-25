@@ -21,16 +21,16 @@ export default function BadSmellsPage() {
               <Link href="/">
                 <Button variant="ghost" size="sm">
                   <ArrowLeft className="mr-2 h-4 w-4" />
-                  返回首页
+                  Back to Home
                 </Button>
               </Link>
               <div className="flex items-center space-x-2">
                 <Code className="h-6 w-6 text-blue-600" />
-                <h1 className="text-xl font-bold">代码坏味道参考</h1>
+                <h1 className="text-xl font-bold">Code Smells Reference</h1>
               </div>
             </div>
             <Link href="/quiz">
-              <Button>开始测验</Button>
+              <Button>Start Quiz</Button>
             </Link>
           </div>
         </div>
@@ -38,10 +38,10 @@ export default function BadSmellsPage() {
 
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">22种经典代码坏味道</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">{badSmells.length} Classic Code Smells</h2>
           <p className="text-gray-600 max-w-3xl">
-            基于《重构：改善既有代码的设计》一书，这里整理了所有经典的代码坏味道。 每种坏味道都包含详细说明和 C++
-            示例代码，帮助你快速识别和理解。
+            Based on the book "Refactoring: Improving the Design of Existing Code", this collection covers all classic code bad smells. Each bad smell includes detailed explanations and Java
+            example code to help you quickly identify and understand them.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export default function BadSmellsPage() {
               <div className="flex items-center space-x-3 mb-6">
                 <span className="text-2xl">{categoryIcons[category]}</span>
                 <h3 className="text-2xl font-bold text-gray-900">{category}</h3>
-                <Badge variant="secondary">{smellsInCategory.length} 项</Badge>
+                <Badge variant="secondary">{smellsInCategory.length} items</Badge>
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -88,7 +88,7 @@ export default function BadSmellsPage() {
 
         {badSmells.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">暂无坏味道数据，请检查数据文件是否存在。</p>
+            <p className="text-gray-500 text-lg">No bad smell data available. Please check if the data files exist.</p>
           </div>
         )}
       </div>

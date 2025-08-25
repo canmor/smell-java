@@ -180,7 +180,7 @@ export default function QuizPage() {
                   </Button>
                   <Link href="/bad-smells" className="flex-1">
                     <Button variant="outline" className="w-full">
-                      Review Bad Smells
+                      Review Smells
                     </Button>
                   </Link>
                 </div>

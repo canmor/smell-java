@@ -2,8 +2,13 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { BookOpen, Brain, Code, Target } from "lucide-react"
+import { getBadSmells, getBadSmellCategories } from "@/lib/data-loader"
 
 export default function HomePage() {
+  const badSmells = getBadSmells()
+  const categories = getBadSmellCategories()
+  const smellCount = badSmells.length
+  const categoryCount = Object.keys(categories).length
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Header */}
@@ -16,10 +21,10 @@ export default function HomePage() {
             </div>
             <nav className="flex space-x-4">
               <Link href="/bad-smells">
-                <Button variant="ghost">坏味道参考</Button>
+                <Button variant="ghost">Smells Reference</Button>
               </Link>
               <Link href="/quiz">
-                <Button variant="ghost">识别测验</Button>
+                <Button variant="ghost">Identification Quiz</Button>
               </Link>
             </nav>
           </div>
@@ -29,21 +34,21 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="py-20">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-5xl font-bold text-gray-900 mb-6">掌握代码重构的艺术</h2>
+          <h2 className="text-5xl font-bold text-gray-900 mb-6">Master the Art of Code Refactoring</h2>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            通过学习《重构：改善既有代码的设计》中的经典"坏味道"，提升你的代码质量和重构技能
+            Improve your code quality and refactoring skills by learning classic "bad smells" from "Refactoring: Improving the Design of Existing Code"
           </p>
           <div className="flex justify-center space-x-4">
             <Link href="/bad-smells">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
                 <BookOpen className="mr-2 h-5 w-5" />
-                开始学习
+                Start Learning
               </Button>
             </Link>
             <Link href="/quiz">
               <Button size="lg" variant="outline">
                 <Brain className="mr-2 h-5 w-5" />
-                测试技能
+                Test Skills
               </Button>
             </Link>
           </div>
@@ -53,45 +58,45 @@ export default function HomePage() {
       {/* Features */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">为什么选择 Refactor Java？</h3>
+          <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">Why Choose Refactor Java?</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card>
               <CardHeader>
                 <BookOpen className="h-12 w-12 text-blue-600 mb-4" />
-                <CardTitle>系统化学习</CardTitle>
+                <CardTitle>Systematic Learning</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription>涵盖22种经典代码坏味道，按5大类别系统组织，便于理解和记忆</CardDescription>
+                <CardDescription>Covers {smellCount} classic code bad smells, systematically organized into {categoryCount} major categories for easy understanding and memorization</CardDescription>
               </CardContent>
             </Card>
 
             <Card>
               <CardHeader>
                 <Code className="h-12 w-12 text-green-600 mb-4" />
-                <CardTitle>Java 实例</CardTitle>
+                <CardTitle>Java Examples</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription>每种坏味道都配有真实的 Java 代码示例，贴近实际开发场景</CardDescription>
+                <CardDescription>Each bad smell comes with real Java code examples, closely aligned with actual development scenarios</CardDescription>
               </CardContent>
             </Card>
 
             <Card>
               <CardHeader>
                 <Brain className="h-12 w-12 text-purple-600 mb-4" />
-                <CardTitle>互动测验</CardTitle>
+                <CardTitle>Interactive Quizzes</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription>通过随机测验检验学习效果，即时反馈帮助巩固知识</CardDescription>
+                <CardDescription>Test your learning outcomes through random quizzes with instant feedback to help consolidate knowledge</CardDescription>
               </CardContent>
             </Card>
 
             <Card>
               <CardHeader>
                 <Target className="h-12 w-12 text-red-600 mb-4" />
-                <CardTitle>技能提升</CardTitle>
+                <CardTitle>Skill Enhancement</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription>提高代码审查能力，培养良好的编程习惯和重构意识</CardDescription>
+                <CardDescription>Improve code review abilities, cultivate good programming habits and refactoring awareness</CardDescription>
               </CardContent>
             </Card>
           </div>
@@ -103,16 +108,16 @@ export default function HomePage() {
         <div className="container mx-auto px-4 text-center">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">22</div>
-              <div className="text-gray-600">种代码坏味道</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">{smellCount}</div>
+              <div className="text-gray-600">Code Smells</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-green-600 mb-2">5</div>
-              <div className="text-gray-600">大分类体系</div>
+              <div className="text-4xl font-bold text-green-600 mb-2">{categoryCount}</div>
+              <div className="text-gray-600">Major Categories</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-purple-600 mb-2">∞</div>
-              <div className="text-gray-600">随机测验题目</div>
+              <div className="text-gray-600">Random Quiz Questions</div>
             </div>
           </div>
         </div>
@@ -121,7 +126,7 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-400">基于《重构：改善既有代码的设计》构建 • 专注 Java 代码质量提升</p>
+          <p className="text-gray-400">Built based on "Refactoring: Improving the Design of Existing Code" • Focused on Java Code Quality Improvement</p>
         </div>
       </footer>
     </div>
