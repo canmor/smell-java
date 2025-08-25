@@ -35,9 +35,17 @@ class AuditService {
             account.getTransactions().add("Overdraft detected");
         }
     }
-    
-    public void clearHistory(BankAccount account) {
-        account.getTransactions().clear();
-        account.getTransactions().add("History cleared by audit");
+}
+
+class ReportService {
+    public void generateStatement(BankAccount account) {
+        account.getTransactions().add("Statement generated");
+        
+        for (String transaction : account.getTransactions()) {
+            if (transaction.contains("Transfer")) {
+                account.getTransactions().add("Transfer fee applied");
+                break;
+            }
+        }
     }
 }

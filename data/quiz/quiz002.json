@@ -2,6 +2,6 @@
   "id": "quiz002",
   "codePath": "quiz002.java",
   "correct": "纯数据类",
-  "choices": ["过大的类", "纯数据类", "懒惰类", "基本类型偏执"],
+  "choices": ["过大的类", "纯数据类", "冗赘的元素", "基本类型偏执"],
   "explanation": "This class only contains data and accessor methods, with no behavioral logic."
 }

@@ -2,6 +2,6 @@
   "id": "quiz017",
   "codePath": "quiz017.java",
   "correct": "夸夸其谈通用性",
-  "choices": ["夸夸其谈通用性", "过大的类", "懒惰类", "异曲同工的类"],
+  "choices": ["夸夸其谈通用性", "过大的类", "冗赘的元素", "异曲同工的类"],
   "explanation": "This example demonstrates the speculative generality code smell, where an overly complex logging system with multiple abstraction layers and flexibility has been created, but only its basic functionality is actually used in practice. This practice of designing complex architectures for features that might appear but may never actually be used leads to code that is difficult to understand and maintain, and adds unnecessary complexity. The YAGNI principle (You Aren't Gonna Need It) should be followed - design and implement features only when they are truly needed."
 }

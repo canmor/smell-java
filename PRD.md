@@ -41,7 +41,6 @@
 * Mutable Data / 可变数据
 * Divergent Change / 发散式变化  
 * Shotgun Surgery / 霰弹式修改  
-- Parallel Inheritance Hierarchies / 平行继承体系  
 
 ##### 🧹 Dispensables（可清除对象）
 
@@ -49,17 +48,14 @@
 * Duplicate Code / 重复代码
 * Loops / 循环语句
 * Lazy Element / 冗赘的元素
-- Lazy Class / 懒惰类  
 * Data Class / 纯数据类  
-- Dead Code / 死代码  
 * Speculative Generality / 夸夸其谈通用性  
 
 ##### 🔗 Couplers（过度耦合）
 
 * Global Data / 全局数据
 * Feature Envy / 依恋情结
-* Insider Trading / 内部交易
-- Inappropriate Intimacy / 不适当的亲密关系  
+* Insider Trading / 内幕交易
 * Message Chains / 过长的消息链  
 * Middle Man / 中间人  
 

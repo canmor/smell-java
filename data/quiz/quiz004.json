@@ -2,6 +2,6 @@
   "id": "quiz004",
   "codePath": "quiz004.java",
   "correct": "过大的类",
-  "choices": ["过大的类", "霰弹式修改", "不适当的亲密关系", "发散式变化"],
+  "choices": ["过大的类", "霰弹式修改", "内幕交易", "发散式变化"],
   "explanation": "This class contains multiple unrelated responsibilities including rendering, physics, audio, game logic, and networking, violating the single responsibility principle. Different responsibilities should be separated into dedicated classes."
 }

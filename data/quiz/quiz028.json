@@ -2,6 +2,6 @@
   "id": "quiz028",
   "codePath": "quiz028.java",
   "correct": "内幕交易",
-  "choices": ["内幕交易", "不适当的亲密关系", "依恋情结", "可变数据"],
-  "explanation": "This code exhibits the Insider Trading code smell. Multiple classes (TransferService and AuditService) are directly accessing and manipulating the same internal data of BankAccount through 'back-channel' communication. Both services directly modify the account's transaction list and balance, creating a web of inappropriate data sharing. This violates the principle of keeping data exchange transparent and controlled. The solution would be to move these operations into the BankAccount class itself or create proper intermediary methods that control access to the internal data."
+  "choices": ["内幕交易", "过长的消息链", "依恋情结", "可变数据"],
+  "explanation": "This code exhibits the Insider Trading code smell. Three different services (TransferService, AuditService, ReportService) are all directly accessing and manipulating the same internal data structure (transactions list) of BankAccount, creating a web of back-channel data sharing. This is not Feature Envy (one class using another's methods) or Message Chains (long chains of method calls), but rather multiple modules 'whispering by the coffee machine' - sharing data through private channels instead of proper, transparent interfaces. The solution is to centralize these operations in BankAccount or create a proper intermediary that controls access."
 }

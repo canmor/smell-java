@@ -1,7 +1,0 @@
-{
-  "id": "quiz016",
-  "codePath": "quiz016.java",
-  "correct": "死代码",
-  "choices": ["死代码", "懒惰类", "注释", "夸夸其谈通用性"],
-  "explanation": "This example contains multiple forms of dead code: unused variables (isLegacyMode, tempVariable, unusedList), conditional blocks that will never execute (if(false) and if(neverTrue)), methods that are never called (legacyProcessing, calculateStatistics, generateCharts, handleInvalidPayment, formatCurrency), commented-out code (processPayment method), and code that will never execute due to early returns (code after return in generateReport method). This dead code should be removed to improve code readability and maintainability."
-}

@@ -2,6 +2,6 @@
   "id": "quiz021",
   "codePath": "quiz021.java",
   "correct": "中间人",
-  "choices": ["中间人", "过长的消息链", "不适当的亲密关系", "依恋情结"],
+  "choices": ["中间人", "过长的消息链", "内幕交易", "依恋情结"],
   "explanation": "This example demonstrates the middle man code smell, where the PrinterFacade class provides almost no additional functionality, simply delegating all method calls to the underlying Printer class without adding any value. The PrinterFacade acts as an unnecessary layer that just forwards requests. In this situation, the middle man class adds complexity to the system without providing sufficient benefit. Consider having clients use the Printer class directly, or have the PrinterFacade provide more meaningful functionality to justify its existence."
 }

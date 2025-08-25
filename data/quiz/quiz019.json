@@ -1,7 +1,0 @@
-{
-  "id": "quiz019",
-  "codePath": "quiz019.java",
-  "correct": "不适当的亲密关系",
-  "choices": ["不适当的亲密关系", "依恋情结", "纯数据类", "过长的消息链"],
-  "explanation": "This example demonstrates the inappropriate intimacy code smell, where multiple classes (CourseManager, GradeCalculator, SchoolReport) directly access and manipulate the package-private fields of the Student class. The Student class exposes its internal data structure (name, id, grades) as package-private fields, allowing other classes to directly modify these fields. This breaks encapsulation and creates tight coupling between classes. A better approach would be to make these fields private and provide appropriate public methods in the Student class to safely manipulate this data."
-}

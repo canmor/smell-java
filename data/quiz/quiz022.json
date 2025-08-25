@@ -1,7 +1,0 @@
-{
-  "id": "quiz022",
-  "codePath": "quiz022.java",
-  "correct": "平行继承体系",
-  "choices": ["平行继承体系", "异曲同工的类", "夸夸其谈通用性", "过大的类"],
-  "explanation": "This example demonstrates the parallel inheritance hierarchies code smell, where whenever we create a subclass for the Shape hierarchy (like Circle, Square, Triangle), we must also create a corresponding subclass for the ShapeRenderer hierarchy (like CircleRenderer, SquareRenderer, TriangleRenderer). This parallel class hierarchy increases maintenance burden because every time a new shape is added, corresponding renderer and factory classes must also be added. The solution is to use composition instead of inheritance, or merge these two hierarchies into one."
-}

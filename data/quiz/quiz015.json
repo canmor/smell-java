@@ -1,7 +1,0 @@
-{
-  "id": "quiz015",
-  "codePath": "quiz015.java",
-  "correct": "懒惰类",
-  "choices": ["懒惰类", "过大的类", "中间人", "纯数据类"],
-  "explanation": "This example demonstrates the lazy class code smell, where these classes (FileUtil, DateFormatter, IntegerWrapper) have too little functionality to justify their separate existence. Lazy classes are usually remnants of refactoring or results of over-engineering. Their functionality should be inlined into their callers or merged into other related classes to reduce the number of classes in the system."
-}
