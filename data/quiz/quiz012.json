@@ -2,6 +2,6 @@
   "id": "quiz012",
   "codePath": "quiz012.java",
   "correct": "霰弹式修改",
-  "choices": ["霰弹式修改", "发散式变化", "中间人", "依恋情结"],
+  "choices": ["发散式变化", "霰弹式修改", "中间人", "依恋情结"],
   "explanation": "This example demonstrates the shotgun surgery code smell: when adding a new membership level, multiple classes need to be modified simultaneously (DiscountCalculator, RewardPointsCalculator, MemberBenefitDisplay, CustomerService, etc.). Membership level-related logic should be encapsulated in one place, for example by creating a MemberLevel class hierarchy or using the strategy pattern, so that adding a new level only requires modifying code in one place."
 }

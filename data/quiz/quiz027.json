@@ -2,6 +2,6 @@
   "id": "quiz027",
   "codePath": "quiz027.java",
   "correct": "冗赘的元素",
-  "choices": ["冗赘的元素", "过长函数", "纯数据类", "神秘命名"],
+  "choices": ["过长函数", "纯数据类", "神秘命名", "冗赘的元素"],
   "explanation": "This code exhibits the Lazy Element code smell. The Calculator class contains only simple, obvious methods where the function names are essentially the same as their implementations. Methods like add(), subtract(), and isEven() don't provide enough abstraction or value to justify their existence as separate methods. These could be inlined at their call sites since they don't add meaningful structure or hide complexity. The class itself might also be unnecessary if these operations could be performed directly where needed."
 }

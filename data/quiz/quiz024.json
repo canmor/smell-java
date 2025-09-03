@@ -2,6 +2,6 @@
   "id": "quiz024",
   "codePath": "quiz024.java",
   "correct": "全局数据",
-  "choices": ["全局数据", "单例模式", "数据泥团", "内幕交易"],
+  "choices": ["单例模式", "数据泥团", "内幕交易", "全局数据"],
   "explanation": "This code exhibits the Global Data code smell. The SystemConfig class contains static variables that can be accessed and modified from anywhere in the codebase. Multiple classes (UserService, DatabaseManager, Logger) are directly accessing and modifying these global variables, making it difficult to track where changes occur and creating potential for mysterious bugs. The global data should be encapsulated with proper access control, or passed as dependencies to classes that need it."
 }

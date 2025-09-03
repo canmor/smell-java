@@ -2,6 +2,6 @@
   "id": "quiz007",
   "codePath": "quiz007.java",
   "correct": "数据泥团",
-  "choices": ["重复代码", "数据泥团", "基本类型偏执", "过大的类"],
+  "choices": ["数据泥团", "重复代码", "基本类型偏执", "过大的类"],
   "explanation": "Data clumps refer to groups of the same data fields that appear repeatedly in multiple places (like shippingStreet, shippingCity, shippingZipCode, and shippingCountry here). This data should be encapsulated into a class (like ShippingAddress), which can reduce the number of parameters, enhance code readability, and centralize related logic."
 }

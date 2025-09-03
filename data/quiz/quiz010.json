@@ -2,6 +2,6 @@
   "id": "quiz010",
   "codePath": "quiz010.java",
   "correct": "异曲同工的类",
-  "choices": ["异曲同工的类", "发散式变化", "数据泥团", "霰弹式修改"],
+  "choices": ["发散式变化", "异曲同工的类", "数据泥团", "霰弹式修改"],
   "explanation": "This example shows three classes (EmailNotifier, SMSAlertSystem, and PushNotificationManager) that perform similar functions (sending notifications) but have different interfaces. These classes should be unified under a common interface, such as creating an INotifier interface that all notification classes implement, which would improve code consistency and allow client code to handle different types of notifications polymorphically."
 }

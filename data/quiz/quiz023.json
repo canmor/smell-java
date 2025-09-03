@@ -2,6 +2,6 @@
   "id": "quiz023",
   "codePath": "quiz023.java",
   "correct": "神秘命名",
-  "choices": ["神秘命名", "过长函数", "数据泥团", "临时字段"],
+  "choices": ["过长函数", "数据泥团", "临时字段", "神秘命名"],
   "explanation": "This code suffers from mysterious naming - the method names and variable names don't clearly express their purpose. 'proc()' should be 'processUserInput()', 'calc()' should be 'calculateDiscountedPrice()', 'chk()' should be 'isValidInput()', 'upd()' should be 'updateUserData()', and variables like 'inp', 'amt', 'r', 'k', 'v', 's' should have more descriptive names. The class 'Mgr' should also have a more meaningful name like 'UserManager'."
 }

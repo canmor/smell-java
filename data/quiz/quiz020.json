@@ -2,6 +2,6 @@
   "id": "quiz020",
   "codePath": "quiz020.java",
   "correct": "过长的消息链",
-  "choices": ["过长的消息链", "内幕交易", "中间人", "依恋情结"],
+  "choices": ["内幕交易", "中间人", "过长的消息链", "依恋情结"],
   "explanation": "This example demonstrates the message chains code smell, where client code needs to make a series of getter method calls to obtain the required data, such as 'inventory.getProduct(0).getSupplier().getContactInfo().getPhoneNumber().getFormattedNumber()'. This long chain of calls creates tight coupling between client code and multiple layers of object structure. If any intermediate layer structure changes, the client code also needs to be modified. The solution is to introduce delegate methods, such as adding a getSupplierPhone(int productIndex) method in the Inventory class to hide internal navigation details."
 }

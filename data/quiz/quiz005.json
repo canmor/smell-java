@@ -2,6 +2,6 @@
   "id": "quiz005",
   "codePath": "quiz005.java",
   "correct": "基本类型偏执",
-  "choices": ["基本类型偏执", "中间人", "数据泥团", "依恋情结"],
+  "choices": ["中间人", "基本类型偏执", "数据泥团", "依恋情结"],
   "explanation": "This code overuses primitive types (strings) to represent domain concepts like email addresses, phone numbers, credit card numbers, and currency codes. These should be encapsulated in dedicated value object classes with their own validation logic."
 }

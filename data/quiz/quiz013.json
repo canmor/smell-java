@@ -2,6 +2,6 @@
   "id": "quiz013",
   "codePath": "quiz013.java",
   "correct": "注释",
-  "choices": ["注释", "重复的 switch", "过长函数", "重复代码"],
+  "choices": ["重复的 switch", "过长函数", "注释", "重复代码"],
   "explanation": "This example is filled with excessive and unnecessary comments that explain obvious code logic (such as explaining 'inventory is sufficient, return true'). Good code should be self-explanatory, reducing the need for comments through meaningful naming and clear structure. Excessive comments often indicate that the code itself lacks clarity or has poor design."
 }

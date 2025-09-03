@@ -2,6 +2,6 @@
   "id": "quiz001",
   "codePath": "quiz001.java",
   "correct": "重复的 switch",
-  "choices": ["过长函数", "重复的 switch", "数据泥团", "基本类型偏执"],
+  "choices": ["重复的 switch", "过长函数", "数据泥团", "基本类型偏执"],
   "explanation": "This code uses a series of if-else statements to handle different types, which should be replaced with polymorphism."
 }

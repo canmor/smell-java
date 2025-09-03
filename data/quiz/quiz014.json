@@ -2,6 +2,6 @@
   "id": "quiz014",
   "codePath": "quiz014.java",
   "correct": "重复代码",
-  "choices": ["重复代码", "依恋情结", "过长函数", "重复的 switch"],
+  "choices": ["依恋情结", "过长函数", "重复代码", "重复的 switch"],
   "explanation": "This example contains a lot of duplicate code, particularly the validation logic for card numbers and expiration dates that is almost identical across three methods. This duplication should be extracted into a shared method, such as validateCardDetails(), to improve code maintainability and reduce the possibility of errors."
 }

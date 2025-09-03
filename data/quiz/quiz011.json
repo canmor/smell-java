@@ -2,6 +2,6 @@
   "id": "quiz011",
   "codePath": "quiz011.java",
   "correct": "发散式变化",
-  "choices": ["发散式变化", "霰弹式修改", "依恋情结", "数据泥团"],
+  "choices": ["霰弹式修改", "发散式变化", "依恋情结", "数据泥团"],
   "explanation": "This example demonstrates the divergent change code smell, where the Order class needs to be modified for different reasons (changes in payment systems, logistics systems, inventory systems, reporting systems, etc.). This violates the single responsibility principle. Different responsibilities should be separated into dedicated classes (like PaymentProcessor, ShippingManager, InventoryManager, ReportGenerator), so that each class only changes for one reason."
 }

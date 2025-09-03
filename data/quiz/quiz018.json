@@ -2,6 +2,6 @@
   "id": "quiz018",
   "codePath": "quiz018.java",
   "correct": "依恋情结",
-  "choices": ["依恋情结", "过大的类", "过长的消息链", "过长函数"],
+  "choices": ["过大的类", "过长的消息链", "依恋情结", "过长函数"],
   "explanation": "This example demonstrates the feature envy code smell, where the methods of the ReportFormatter class (formatChartData and generateSummary) are more interested in the data of the ReportData class than in the data of their own class. These methods extensively use ReportData's attributes and methods and perform various calculations on its data. This indicates that these methods might belong in the ReportData class, which would improve cohesion and reduce dependencies on other classes' internal implementations."
 }
